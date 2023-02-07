@@ -3,12 +3,11 @@ title: Big O Notation
 date: 2022-10-06 16:32:08
 updated: 2022-10-06 16:32:08
 tags:
-  - '笔记'
+  - Fundamental
 categories:
-  - 'Basic'
+  - Study
 lang: en
-excerpt: 'big o notation is used to analyze the efficiency of an algorithm: as the size of the input growth, how drastically do the space or time requirements grow with it.'
-comments: true
+excerpt: Big o notation is used to analyze the efficiency of an algorithm, as the size of the input growth, how drastically do the space or time requirements grow with it.
 ---
 
 ## What is big O notation
@@ -16,8 +15,6 @@ comments: true
 big o notation is used to analyze the efficiency of an algorithm: as the size of the input growth, how drastically do the space or time requirements grow with it.
 
 So when evaluating an algorithm efficiency we must taking to consideration the efficiency of each step within the algorithm. Then find the step that has the worst performance and prioritize it over all of the better performing steps.
-
-<!--more-->
 
 ## $O(1)$
 
@@ -124,7 +121,7 @@ function Merge(left, right) {
 
 Consider we have 4 length array, `MergeSort()` have two level $O(logn)$ . For **EVERY LEVEL**, `Merge()` touch each number in the array n times $O(n)$. So it's $O(nlogn)$ totally
 
-![Time Complexity Merge Sort.jpg](/statics/[BIG%20O%20NOTAION]Time%20Complexity%20Merge%20Sort.jpg)
+![Time Complexity Merge Sort.jpg](/images/[Big%20O%20Notation]Time%20Complexity%20Merge%20Sort.jpg)
 
 ## $O(2^n)$
 
