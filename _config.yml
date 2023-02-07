@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Tianqi(Kristine)'s Blog
-subtitle: The Profound In The World Is Endless ∞
-description: Everything Includes CS Articles And Myself
+title: Kristine's Blog
+subtitle: Study And Reflection
+description: A Person Who Wants to Leave Something in the World
 keywords: Kristine7q blog TianqiLiang Tianqi
 author: Tianqi(Kristine)
 language: en
@@ -24,6 +24,7 @@ pretty_urls:
 source_dir: source
 public_dir: public
 tag_dir: tags
+about_dir: about
 archive_dir: archives
 category_dir: categories
 code_dir: downloads/code
