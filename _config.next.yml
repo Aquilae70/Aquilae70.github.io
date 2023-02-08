@@ -26,7 +26,7 @@ custom_file_path:
   #postBodyEnd: source/_data/post-body-end.njk
   #footer: source/_data/footer.njk
   #bodyEnd: source/_data/body-end.njk
-  #variable: source/_data/variables.styl
+  # variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
   #style: source/_data/styles.styl
 
@@ -331,8 +331,8 @@ preconnect: true
 # Set the text alignment in posts / pages.
 text_align:
   # Available values: start | end | left | right | center | justify | justify-all | match-parent
-  desktop: justify
-  mobile: justify
+  desktop: left
+  mobile: left
 
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
@@ -360,7 +360,7 @@ codeblock:
     dark: prism-dark
   # Add copy button on codeblock
   copy_button:
-    enable: false
+    enable: true
     # Available values: default | flat | mac
     style:
 
@@ -409,10 +409,10 @@ github_banner:
 # ---------------------------------------------------------------
 
 font:
-  enable: false
+  enable: true
 
   # Uri of fonts host, e.g. https://fonts.googleapis.com (Default).
-  host:
+  host: https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -421,31 +421,31 @@ font:
 
   # Global font settings used for all elements inside <body>.
   global:
-    external: true
-    family: Lato
+    external: false
+    family:
     size:
 
   # Font settings for site title (.site-title).
   title:
-    external: true
+    external: false
     family:
     size:
 
   # Font settings for headlines (<h1> to <h6>).
   headings:
-    external: true
+    external: false
     family:
     size:
 
   # Font settings for posts (.post-body).
   posts:
     external: true
-    family:
-    size: 10px
+    family: Roboto
+    size:
 
   # Font settings for <code> and code blocks.
   codes:
-    external: true
+    external: false
     family:
 
 # ---------------------------------------------------------------
@@ -696,8 +696,8 @@ gitalk:
   enable: false
   github_id: kristine7q # GitHub repo owner
   repo: kristine7q.github.io # Repository name to store issues
-  client_id:  # GitHub Application Client ID
-  client_secret:  # GitHub Application Client Secret
+  client_id: # GitHub Application Client ID
+  client_secret: # GitHub Application Client Secret
   admin_user: kristine7q # GitHub repo owner and collaborators, only these guys can initialize gitHub issues
   distraction_free_mode: true # Facebook-like distraction free mode
   # When the official proxy is not available, you can change it to your own proxy address

@@ -1,5 +1,5 @@
 ---
-title: 
+title:
 type: about
 date: 2023-02-07 12:50:52
 comments: false
