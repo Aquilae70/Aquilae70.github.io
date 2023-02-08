@@ -7,6 +7,7 @@ tags:
 categories:
   - Instruction
 lang: en
+comments: true
 excerpt: An instruction about how to setup a new MacBook corresponding to my own using habit. It might not correspond to yours
 ---
 

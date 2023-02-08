@@ -193,7 +193,7 @@ toc:
 # ---------------------------------------------------------------
 
 # Show multilingual switcher in footer.
-language_switcher: true
+language_switcher: false
 
 footer:
   # Specify the year when the site was setup. If not defined, current year will be used.
@@ -741,7 +741,7 @@ google_analytics:
   tracking_id: G-B82VS1621L # <app_id>
   # By default, NexT will load an external gtag.js script on your site.
   # If you only need the pageview feature, set the following option to true to get a better performance.
-  only_pageview: true
+  only_pageview: false
 
 # Baidu Analytics
 # See: https://tongji.baidu.com

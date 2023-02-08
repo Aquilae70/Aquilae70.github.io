@@ -10,6 +10,7 @@ categories:
   - Study
 lang: en
 excerpt: DFS is a recursive algorithm that use backtracking principle for graph traversal. This is an article to introduce its intuition and implementation
+comments: true
 ---
 
 ## Intuition

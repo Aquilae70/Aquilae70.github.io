@@ -1,5 +1,4 @@
 ---
-layout: ""
 title: {{ title }}
 date: {{ date }}
 updated: {{ date }}
