@@ -13,7 +13,7 @@ comments: true
 
 ## What is big O notation
 
-big o notation is used to analyze the efficiency of an algorithm: as the size of the input growth, how drastically do the space or time requirements grow with it.
+Big O notation is used to analyze the efficiency of an algorithm: as the size of the input growth, how drastically do the space or time requirements grow with it.
 
 So when evaluating an algorithm efficiency we must taking to consideration the efficiency of each step within the algorithm. Then find the step that has the worst performance and prioritize it over all of the better performing steps.
 

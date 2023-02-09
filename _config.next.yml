@@ -162,7 +162,7 @@ social:
 
 social_icons:
   enable: true
-  icons_only: true
+  icons_only: false
   transition: true
 
 # Blog rolls
