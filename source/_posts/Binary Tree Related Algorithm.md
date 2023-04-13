@@ -10,7 +10,7 @@ categories:
   - Study
 lang: en
 comments: true
-excerpt: Here are some algorithms about binary tree, include traversal trees, complete trees, different types trees etc.
+excerpt: Here are some algorithms about binary tree.
 ---
 
 Here are some algorithms about binary tree, include: traversal trees, complete trees, different types trees etc. You can direct to them by outline on the right.

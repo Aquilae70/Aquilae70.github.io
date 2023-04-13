@@ -6,7 +6,7 @@ categories:
   - Instruction
 lang: en
 comments: true
-excerpt: This is a simple guidance about how to build my hexo blog. It's easier to find more better tutorial on the website.
+excerpt: This is a simple guidance about how to build my hexo blog.
 date: 2023-02-07 13:55:48
 updated: 2023-02-07 13:55:48
 ---
