@@ -1,11 +1,12 @@
 ---
 title: MacBook Setup
 date: 2022-09-13 14:47:33
-updated: 2022-12-13 15:08:58
+updated: 2023-04-13 15:40:00
 tags:
-  - Setting
+  - MacBook setup
+  - macOS settings
 categories:
-  - Instruction
+  - Productivity
 lang: en
 comments: true
 excerpt: An instruction about how to setup a new MacBook corresponding to my own using habit. It might not correspond to yours

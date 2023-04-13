@@ -1,11 +1,11 @@
 ---
 title: Big O Notation
 date: 2022-10-06 16:32:08
-updated: 2022-10-06 16:32:08
+updated: 2023-04-13 15:47:00
 tags:
-  - Fundamental
+  - big O notation
 categories:
-  - Study
+  - Study Algorithms
 lang: en
 excerpt: Big o notation is used to analyze the efficiency of an algorithm, as the size of the input growth, how drastically do the space or time requirements grow with it.
 comments: true

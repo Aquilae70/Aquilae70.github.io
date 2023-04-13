@@ -1,13 +1,13 @@
 ---
 title: Depth First Search (DFS) Algorithms
 date: 2022-12-16 14:52:44
-updated: 2022-12-16 14:52:44
+updated: 2023-04-13 15:42:00
 tags:
-  - Fundamental
-  - Algorithm
-  - DFS
+  - Depth-First Search(DFS)
+  - Graph Traversal
+  - Backtracking
 categories:
-  - Study
+  - Study Algorithms
 lang: en
 excerpt: DFS is a recursive algorithm that use backtracking principle for graph traversal. This is an article to introduce its intuition and implementation
 comments: true
@@ -91,7 +91,7 @@ function Dfs(G, v) {
     const v = stack.pop();
     if (v.marked === false) {
       visit(v);
-      v.marked === true;
+      v.marked = true;
     }
     for (let w in v) {
       if (w.marked === false) {
