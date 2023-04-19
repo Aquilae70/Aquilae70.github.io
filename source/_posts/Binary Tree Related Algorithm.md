@@ -1,7 +1,7 @@
 ---
 title: Binary Tree Related Algorithm
 date: 2023-01-19 15:24:56
-updated: 2023-04-13 15:43:00
+updated: {{ updated }}
 tags:
 
   - Binary Tree

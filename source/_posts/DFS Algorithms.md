@@ -1,7 +1,7 @@
 ---
 title: Depth First Search (DFS) Algorithms
 date: 2022-12-16 14:52:44
-updated: 2023-04-13 15:42:00
+updated: {{ updated }}
 tags:
   - Depth-First Search(DFS)
   - Graph Traversal

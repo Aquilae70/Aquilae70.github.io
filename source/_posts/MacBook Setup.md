@@ -1,7 +1,7 @@
 ---
 title: MacBook Setup
 date: 2022-09-13 14:47:33
-updated: 2023-04-13 15:40:00
+updated: {{ updated }}
 tags:
   - MacBook setup
   - macOS settings

@@ -1,7 +1,7 @@
 ---
 title: Big O Notation
 date: 2022-10-06 16:32:08
-updated: 2023-04-13 15:47:00
+updated: {{ updated }}
 tags:
   - big O notation
 categories:
