@@ -1,9 +1,10 @@
 ---
 title: Big O Notation
 date: 2022-10-06 16:32:08
-updated: {{ updated }}
+updated: { { updated } }
 tags:
-  - big O notation
+  - Big O notation
+  - Time Complexities
 categories:
   - Study Algorithms
 lang: en
