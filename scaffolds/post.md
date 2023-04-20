@@ -9,5 +9,6 @@ categories:
 lang: en
 comments: true
 excerpt:
-permalink: 
+permalink:
+mathjax: false
 ---

@@ -6,7 +6,7 @@ categories:
   - Share Experience
 lang: en
 comments: true
-excerpt:
+excerpt: ''
 date: 2023-04-13 15:36:59
 updated: {{ updated }}
 ---
@@ -24,4 +24,3 @@ Bachelor Degree in China, 1 year full-time Front-End Developer in Beijing, 1 yea
 ### Experience in previous projects
 
 ### Communication skills
-
