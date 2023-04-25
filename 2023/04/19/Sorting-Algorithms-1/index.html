@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/my_logo_400x400.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/my_logo_400x400.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/my_logo_16x16.png">
+  <link rel="mask-icon" href="/images/my_logo_400x400.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap/css?family=Roboto:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/orange/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kristine7q.me","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Sorting algorithms are the backbone of computer science and play a critical role in organizing data efficiently. In this comprehensive guide, we&#39;ll delve into 7 core sorting algorithms, including thei">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sorting Algorithms (Part I)">
+<meta property="og:url" content="https://kristine7q.me/2023/04/19/Sorting-Algorithms-1/">
+<meta property="og:site_name" content="Kristine&#39;s Blog">
+<meta property="og:description" content="Sorting algorithms are the backbone of computer science and play a critical role in organizing data efficiently. In this comprehensive guide, we&#39;ll delve into 7 core sorting algorithms, including thei">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://kristine7q.me/images/%5BSorting%20Algorithms%5DInsertion_Sort.GIF">
+<meta property="og:image" content="https://kristine7q.me/images/%5BSorting%20Algorithms%5DMerge_Sort.gif">
+<meta property="article:published_time" content="2023-04-19T16:05:24.000Z">
+<meta property="article:modified_time" content="2023-04-25T22:57:54.566Z">
+<meta property="article:author" content="Tianqi(Kristine)">
+<meta property="article:tag" content="Time Complexities">
+<meta property="article:tag" content="Binary Tree">
+<meta property="article:tag" content="Sorting algorithms">
+<meta property="article:tag" content="Insertion sort">
+<meta property="article:tag" content="Merge sort">
+<meta property="article:tag" content="Divide-and-conquer">
+<meta property="article:tag" content="Recursive">
+<meta property="article:tag" content="Heap Sort">
+<meta property="article:tag" content="Heap">
+<meta property="article:tag" content="Complete Binary Tree">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://kristine7q.me/images/%5BSorting%20Algorithms%5DInsertion_Sort.GIF">
+
+
+<link rel="canonical" href="https://kristine7q.me/2023/04/19/Sorting-Algorithms-1/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kristine7q.me/2023/04/19/Sorting-Algorithms-1/","path":"2023/04/19/Sorting-Algorithms-1/","title":"Sorting Algorithms (Part I)"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Sorting Algorithms (Part I) | Kristine's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B82VS1621L"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-B82VS1621L","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Kristine's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Study And Reflection</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">20</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">3</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">6</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Insertion-Sort"><span class="nav-number">1.</span> <span class="nav-text">Insertion Sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-Sort"><span class="nav-number">2.</span> <span class="nav-text">Merge Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Time-Complexity"><span class="nav-number">2.1.</span> <span class="nav-text">Time Complexity</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Heap-Sort"><span class="nav-number">3.</span> <span class="nav-text">Heap Sort</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Heap"><span class="nav-number">3.1.</span> <span class="nav-text">Heap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Intuition"><span class="nav-number">3.2.</span> <span class="nav-text">Intuition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Implementation"><span class="nav-number">3.3.</span> <span class="nav-text">Implementation</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tianqi(Kristine)"
+      src="/images/my_logo_400x400.png">
+  <p class="site-author-name" itemprop="name">Tianqi(Kristine)</p>
+  <div class="site-description" itemprop="description">A Person Who Wants to Bring Something in the World</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kristine7q" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kristine7q" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kristine.7q@gmail.com" title="E-Mail → mailto:kristine.7q@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kristine7q.me/2023/04/19/Sorting-Algorithms-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/my_logo_400x400.png">
+      <meta itemprop="name" content="Tianqi(Kristine)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kristine's Blog">
+      <meta itemprop="description" content="A Person Who Wants to Bring Something in the World">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Sorting Algorithms (Part I) | Kristine's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Sorting Algorithms (Part I)
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 19/04/2023 09:05:24" itemprop="dateCreated datePublished" datetime="2023-04-19T09:05:24-07:00">19/04/2023</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 25/04/2023 15:57:54" itemprop="dateModified" datetime="2023-04-25T15:57:54-07:00">25/04/2023</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Study-Algorithms/" itemprop="url" rel="index"><span itemprop="name">Study Algorithms</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2023/04/19/Sorting-Algorithms-1/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/04/19/Sorting-Algorithms-1/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>Sorting algorithms are the backbone of computer science and play a critical role in organizing data efficiently. In this comprehensive guide, we’ll delve into 7 core sorting algorithms, including their theoretical foundations, complexities, and practical implementations.</p>
+<p>From <em>Insertion Sort</em> to <em>Bucket Sort</em>, I will try to explain them in the most intuitive and easy-to-understand ways. Get ready to elevate your coding skills to new heights!</p>
+<table>
+<thead>
+<tr>
+<th align="left">Algorithm</th>
+<th align="center">Time Complexities (worst&#x2F;average)</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">Insertion Sort</td>
+<td align="center">$Θ(n^2)$</td>
+</tr>
+<tr>
+<td align="left">Merge Sort</td>
+<td align="center">$Θ(n \log n)$</td>
+</tr>
+<tr>
+<td align="left">Heap Sort</td>
+<td align="center">$O(n \log n)$</td>
+</tr>
+<tr>
+<td align="left">Quick Sort</td>
+<td align="center">$Θ(n^2)$ &#x2F;$Θ(n \log n)$</td>
+</tr>
+<tr>
+<td align="left">Counting Sort</td>
+<td align="center">$Θ(k+n)$</td>
+</tr>
+<tr>
+<td align="left">Radix Sort</td>
+<td align="center">$Θ(d(n+k))$</td>
+</tr>
+<tr>
+<td align="left">Bucket Sort</td>
+<td align="center">$Θ(n^2)$ &#x2F;$Θ(n)$</td>
+</tr>
+</tbody></table>
+<h2 id="Insertion-Sort"><a href="#Insertion-Sort" class="headerlink" title="Insertion Sort"></a>Insertion Sort</h2><p>I’ve found the most intuitive way to understand sorting algorithms is using <strong>playing cards</strong>, I got this eureka! firstly in the book <em>Introduction to Algorithms</em>. I realized that when I was playing cards, I was actually using insertion sort to manage cards in my hand. Like this.</p>
+<p><img data-src="/images/%5BSorting%20Algorithms%5DInsertion_Sort.GIF" alt="Insertion_Sort.GIF"></p>
+<p>It’s fairly easy to understand its process, let’s analyze its processing steps:</p>
+<ol>
+<li>Pick the first card in the list. -&gt; for loop</li>
+<li>Find a position in the hand where the picked card is greater than the card in front and smaller than the card behind. -&gt; search</li>
+<li>Insert the picked card into the hand list at that position. -&gt; array insert</li>
+</ol>
+<p>So picking any search algorithm and array insert algorithm its easy to implement insertion sort. Here is my solution in JavaScript:</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">INSERTION_SORT</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">A</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">let</span> <span class="token constant">R</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token constant">A</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> <span class="token constant">A</span><span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// for-loop for step one</span>
+    <span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token constant">R</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+    <span class="token comment">// from back to front search position where the target card grater than the behind one</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>j <span class="token operator">>=</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">&lt;=</span> <span class="token constant">R</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token constant">R</span><span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">R</span><span class="token punctuation">[</span>j<span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// prepare for array insert</span>
+      j<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+    <span class="token constant">R</span><span class="token punctuation">[</span>j <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> <span class="token constant">R</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Obviously, insertion sort has a time complexity of $O(n^2)$ due to its nested loops. However, if we choose binary search as our search algorithm instead of the linear search, the time complexity can be optimized to $O(n \log_2n)$</p>
+<h2 id="Merge-Sort"><a href="#Merge-Sort" class="headerlink" title="Merge Sort"></a>Merge Sort</h2><p>Merge Sort follows the <strong>divide-and-conquer</strong> method which can be illustrated in 3 steps:</p>
+<ul>
+<li>Divide: break the problem into several subproblem which are similar to the original problem but smaller size</li>
+<li>Conquer: solve the subproblem recursively</li>
+<li>Combine: combine these solutions to create a solution to the original problem</li>
+</ul>
+<p><img data-src="/images/%5BSorting%20Algorithms%5DMerge_Sort.gif" alt="Merge_Sort.GIF"></p>
+<p>Okay, let’s move on step by step. First, divide the problem into smaller parts. Our big problem is to solve a needed sort list. Thereby, our small problem is to sort a small part of the list. We choose to divide list into 2 parts.</p>
+<p>Next, if we can solve the smaller part of our problem, we should use <strong>recursive</strong> to solve all same small parts of our big problem. Finally, we combine this smaller ones into its origin problem. Here is the core <code>Divide()</code> code:</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Divide</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">A</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">.</span>length <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token constant">A</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">const</span> mid <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">.</span>length <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+  <span class="token keyword">return</span> <span class="token function">Combine</span><span class="token punctuation">(</span><span class="token function">Divide</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">Divide</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">.</span><span class="token function">slice</span><span class="token punctuation">(</span>mid<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Since the list is divided recursively, the termination condition is when there is only one number in a small list, which does not require sorting in the divided process. Actually, the sort occur in the <code>Combine()</code> process, where two sorted arrays are merged into one. Here is an example implementation:</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Combine</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">L</span><span class="token punctuation">,</span> <span class="token constant">R</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">R</span><span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token constant">R</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token constant">R</span><span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span> <span class="token keyword">else</span> <span class="token punctuation">&#123;</span>
+      result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token constant">L</span><span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> <span class="token punctuation">[</span><span class="token operator">...</span>result<span class="token punctuation">,</span> <span class="token operator">...</span><span class="token constant">L</span><span class="token punctuation">,</span> <span class="token operator">...</span><span class="token constant">R</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Time-Complexity"><a href="#Time-Complexity" class="headerlink" title="Time Complexity"></a>Time Complexity</h3><p>Merge sort uses divide-and-conquer approach, in order to understand its time complexity, let’s break down the algorithm into steps: ①divide repeatedly till length &#x3D;&#x3D; 1 ②Merge two smaller array and Combine</p>
+<ul>
+<li>Divide: We repeatedly keep dividing the original array of length $n$ by 2, until each sub-array has only one element. The equation is $n&#x2F;2&#x2F;2&#x2F;2&#x2F;2…&#x2F;2 &#x3D; 1$, and how many 2 we have, how many times we divided totally, solved $t&#x3D;log_2n$. So, the total number of divisions is $log_2n$ times:<ul>
+<li>$n&#x2F;2&#x2F;2…&#x2F;2&#x3D;1$</li>
+<li>$ n&#x3D;1⨉2⨉2…⨉2$</li>
+<li>$log_2n&#x3D;log_22⨉2…⨉2&#x3D;t \log_22&#x3D;t$</li>
+<li>$t&#x3D;log_2n$</li>
+</ul>
+</li>
+<li>Combine: The number of times we combine the sub-arrays is equal to the number of times we divided the original array, which is $O(log_2n)$. However, before each combine step, we need to merge two smaller arrays, and this merging process takes $O(n)$ time for all pairs of sub-arrays. Since the merging steps are performed at different levels of the recursion, the total time complexity for merging is $O(n \log_2n)$.</li>
+</ul>
+<p>Considering the worst-case array of the sort algorithm, the overall time complexity is determined by the merging step, which is $O(n \log_2n)$.</p>
+<h2 id="Heap-Sort"><a href="#Heap-Sort" class="headerlink" title="Heap Sort"></a>Heap Sort</h2><h3 id="Heap"><a href="#Heap" class="headerlink" title="Heap"></a>Heap</h3><p>To truly understand heap sort, firstly we need to grasp the concept of a Heap. Heap is a binary tree data structure with 2 constraints:</p>
+<ol>
+<li>complete binary tree: Every levels except the last one are filled, the last level’s nodes are as far left as possible.</li>
+<li>the value stored in each node is ≥(≤) the value in its children</li>
+</ol>
+<p>Here is an example for array <code>[9,7,6,3,1,5]</code></p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">      9(0)
+     /   \
+    7(1)  6(2)
+   / \    /
+3(3)1(4) 5(5)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>Traditionally, we think of a binary tree with a tree data structure. However, a complete binary tree can also be implemented using an array data structure. And it can easy to access its Parent, Left_Child, Right_Child by index.</p>
+<p>In the above left example, you can see the relationship between vertex <code>i</code> and its parent or children. That is, for each vertex <code>i</code>, the indexes of its parent or children are: <code>parent_index=(i-1)/2</code>, <code>left_child_index=2i+1</code>, <code>right_child_index=2i</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">parent</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">i</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">l_child</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">i</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token number">2</span> <span class="token operator">*</span> i <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token function-variable function">r_child</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">i</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token number">2</span> <span class="token operator">*</span> i<span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Intuition"><a href="#Intuition" class="headerlink" title="Intuition"></a>Intuition</h3><p>In a max-heap, where the value of each node’s parent is greater than or equal to(≥) the value of the node itself. Thus, the largest element must be stored at root.</p>
+<p>So imagine, there is a max-heap, it can build and maintain itself. When we pick the root, which contains the largest value, and replace it with a smaller value on the top. This disrupts the max-heap property, as the largest value is no longer at the root. But fear not! The heap has the ability to automatically rebuild itself, rearranging the elements to restore the max-heap property with the largest value back at the root.</p>
+<p>If we continue this process of picking the largest value and replacing it until all elements are removed from the heap, we will get a sorted array.</p>
+<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><p><code>Heapify()</code>: maintain the max-heap property, $O(\log_2n)$.</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">Heapify</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">A</span><span class="token punctuation">,</span> i</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> l <span class="token operator">=</span> <span class="token function">l_child</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> r <span class="token operator">=</span> <span class="token function">r_child</span><span class="token punctuation">(</span>i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> largest <span class="token operator">=</span> i<span class="token punctuation">;</span>
+  <span class="token comment">// compare 3 numbers: A[i], A[l], A[r]</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>l <span class="token operator">&lt;</span> <span class="token constant">A</span><span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> <span class="token constant">A</span><span class="token punctuation">[</span>l<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token constant">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    largest <span class="token operator">=</span> l<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>r <span class="token operator">&lt;</span> <span class="token constant">A</span><span class="token punctuation">.</span>length <span class="token operator">&amp;&amp;</span> <span class="token constant">A</span><span class="token punctuation">[</span>r<span class="token punctuation">]</span> <span class="token operator">></span> <span class="token constant">A</span><span class="token punctuation">[</span>largest<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    largest <span class="token operator">=</span> r<span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">if</span> <span class="token punctuation">(</span>largest <span class="token operator">!==</span> i<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token comment">// swap 2 numbers: A[largest], A[i]</span>
+    <span class="token keyword">const</span> temp <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">[</span>largest<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token constant">A</span><span class="token punctuation">[</span>largest<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token constant">A</span><span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> temp<span class="token punctuation">;</span>
+    <span class="token function">Heapify</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">,</span> largest<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p><code>BuildHeap()</code>: initial unsorted array to a max-heap, for storing an n elements array, the leaves are the nodes indexed by n&#x2F;2 +1, n&#x2F;2 +2,…,n. Thus, we only need to loop <code>A.length/2</code></p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">BuildHeap</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">A</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">.</span>length <span class="token operator">/</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">Heapify</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">,</span> i<span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> <span class="token constant">A</span><span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<p>so the main function of heap sort is:</p>
+<pre class="line-numbers language-javascript" data-language="javascript"><code class="language-javascript"><span class="token keyword">const</span> <span class="token function-variable function">HEAP_SORT</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token constant">A</span></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+  <span class="token keyword">const</span> result <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  <span class="token function">BuildHeap</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token keyword">let</span> j <span class="token operator">=</span> <span class="token constant">A</span><span class="token punctuation">.</span>length <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span>
+  <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    result<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token constant">A</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token constant">A</span><span class="token punctuation">.</span><span class="token function">unshift</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">.</span><span class="token function">pop</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token function">Heapify</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">,</span> <span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token keyword">return</span> result<span class="token punctuation">;</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Tianqi(Kristine)
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://kristine7q.me/2023/04/19/Sorting-Algorithms-1/" title="Sorting Algorithms (Part I)">https://kristine7q.me/2023/04/19/Sorting-Algorithms-1/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/Time-Complexities/" rel="tag"><i class="fa fa-tag"></i> Time Complexities</a>
+              <a href="/tags/Binary-Tree/" rel="tag"><i class="fa fa-tag"></i> Binary Tree</a>
+              <a href="/tags/Sorting-algorithms/" rel="tag"><i class="fa fa-tag"></i> Sorting algorithms</a>
+              <a href="/tags/Insertion-sort/" rel="tag"><i class="fa fa-tag"></i> Insertion sort</a>
+              <a href="/tags/Merge-sort/" rel="tag"><i class="fa fa-tag"></i> Merge sort</a>
+              <a href="/tags/Divide-and-conquer/" rel="tag"><i class="fa fa-tag"></i> Divide-and-conquer</a>
+              <a href="/tags/Recursive/" rel="tag"><i class="fa fa-tag"></i> Recursive</a>
+              <a href="/tags/Heap-Sort/" rel="tag"><i class="fa fa-tag"></i> Heap Sort</a>
+              <a href="/tags/Heap/" rel="tag"><i class="fa fa-tag"></i> Heap</a>
+              <a href="/tags/Complete-Binary-Tree/" rel="tag"><i class="fa fa-tag"></i> Complete Binary Tree</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/02/07/Build%20Hexo%20Blog/" rel="next" title="How to Build My Hexo Blog">
+                  How to Build My Hexo Blog <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tianqi(Kristine)</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">true</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"kristine7q","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
