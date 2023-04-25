@@ -8,14 +8,16 @@ tags:
 categories:
   - Study Algorithms
 lang: en
-excerpt: Big o notation is used to analyze the efficiency of an algorithm, as the size of the input growth, how drastically do the space or time requirements grow with it.
+excerpt: Big O notation is used to analyze the efficiency of an algorithm, and characterizes an upper bound on the asymptotic behavior of a function. it says that a function grows no faster than a certain rate, based on the highest-order term.
 comments: true
 mathjax: true
 ---
 
 ## What is big O notation
 
-Big O notation is used to analyze the efficiency of an algorithm: as the size of the input growth, how drastically do the space or time requirements grow with it.
+Big O notation is used to analyze the efficiency of an algorithm, and characterizes an upper bound on the asymptotic behavior of a function. it says that a function grows no faster than a certain rate, based on the highest-order term.
+
+Consider, for example, the function $7n^3+100n^2-20n+6$. Its highest-order term is $7n^3$, and so we say that this function’s rate of growth is $n^3$. Because this function grows **no faster than** $n^3$, we can write that it is $O(n^3)$
 
 So when evaluating an algorithm efficiency we must taking to consideration the efficiency of each step within the algorithm. Then find the step that has the worst performance and prioritize it over all of the better performing steps.
 
