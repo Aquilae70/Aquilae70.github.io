@@ -1,5 +1,5 @@
 ---
-title: MacBook Setup
+title: MacBook Setup for Frontend Development
 date: 2022-09-13 14:47:33
 updated: {{ updated }}
 tags:
@@ -78,6 +78,12 @@ Install [homebrew](https://brew.sh/) as package manager for macOS, paste that co
 
 > Refer: [Install Homebrew](https://mac.install.guide/homebrew/3.html)
 
+And then install xcode-command-line tools
+
+```shell
+xcode-select --install
+```
+
 Install GUI applications:
 
 ```shell
@@ -106,7 +112,8 @@ autojump \
 nvm \
 pnpm \
 commitizen \
-graphicsmagick
+graphicsmagick \
+java
 ```
 
 Install other apple apps: `xnip`, `google drive`

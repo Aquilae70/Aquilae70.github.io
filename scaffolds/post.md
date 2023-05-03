@@ -9,6 +9,5 @@ categories:
 lang: en
 comments: true
 excerpt:
-permalink:
 mathjax: false
 ---

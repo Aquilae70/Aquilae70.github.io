@@ -20,13 +20,13 @@ comments: true
 excerpt: >-
   Sorting algorithms are the backbone of computer science and play a critical
   role in organizing data efficiently. In this comprehensive guide, we'll delve
-  into 7 core sorting algorithms, including their theoretical foundations,
+  into 3 core sorting algorithms: Insertion Sort, Merge Sort and Heap Sort, including their theoretical foundations,
   complexities, and practical implementations.
 mathjax: true
 date: 2023-04-19 09:05:24
 ---
 
-Sorting algorithms are the backbone of computer science and play a critical role in organizing data efficiently. In this comprehensive guide, we'll delve into 7 core sorting algorithms, including their theoretical foundations, complexities, and practical implementations.
+Sorting algorithms are the backbone of computer science and play a critical role in organizing data efficiently. In this comprehensive guide, we'll delve into 7 core sorting algorithms, including their theoretical foundations, complexities, and practical implementations. This part, lets concentrate on the first 3 algorithms: Insertion Sort, Merge Sort and Heap Sort.
 
 From _Insertion Sort_ to _Bucket Sort_, I will try to explain them in the most intuitive and easy-to-understand ways. Get ready to elevate your coding skills to new heights!
 
