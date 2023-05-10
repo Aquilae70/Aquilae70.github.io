@@ -97,7 +97,8 @@ figma \
 imageoptim \
 eul \
 alfred \
-google-drive
+google-drive \
+rectangle
 ```
 
 Install terminal applications :
