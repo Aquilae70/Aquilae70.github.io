@@ -1,7 +1,7 @@
 ---
 title: MacBook Setup for Frontend Development
 date: 2022-09-13 14:47:33
-updated: {{ updated }}
+updated: {{updated}}
 tags:
   - MacBook setup
   - macOS settings
@@ -144,8 +144,9 @@ ts-node
          3. Dimming: Unselect all dimming
    3. Profiles -> window
       1. Transparency: 30
-      2. Style: full screen
-      3. Screen: main screen
+      2. Blur: 10
+      3. Style: no title bar
+      4. Screen: main screen
    4. Profiles -> Advanced
       1. Semantic History -> Open with editor ... -> VS Code
    5. [Open new split pane with current directory](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory/337386#337386)
@@ -159,7 +160,8 @@ ts-node
       echo 'eval "$(starship init zsh)"' >> ~/.zshrc
       ```
 
-   2. Install and use the new font in iTerm2: Preferences -> Profile -> Text -> Font: monoid-nerd-font.
+   2. Install and use the new font in iTerm2:
+      Preferences -> Profile -> Text -> Font: monoid-nerd-font + Blinking cursor
 
       ```shell
       brew tap homebrew/cask-fonts
