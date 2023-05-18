@@ -1,9 +1,8 @@
 ---
 title: Binary Tree Related Algorithm
 date: 2023-01-19 15:24:56
-updated: {{ updated }}
+updated: {{updated}}
 tags:
-
   - Binary Tree
 categories:
   - Study Algorithms
@@ -18,7 +17,7 @@ Here are some algorithms about binary tree, include: traversal trees, complete t
 
 ### Pre Order
 
-```js
+```ts
 const PreOrder = (node) => {
   if (node === null) return;
   console.log(node.value); // visit the node before traverse
@@ -29,7 +28,7 @@ const PreOrder = (node) => {
 
 ### In Order
 
-```js
+```ts
 const InOrder = (node) => {
   if (node === null) return;
   InOrder(node.left);
@@ -40,7 +39,7 @@ const InOrder = (node) => {
 
 ### Post Order
 
-```js
+```ts
 const PostOrder = (node) => {
   if (node === null) return;
   PostOrder(node.left);
@@ -51,7 +50,7 @@ const PostOrder = (node) => {
 
 ### Level Order
 
-```js
+```ts
 function levelOrder(root: TreeNode | null): number[][] {
   let queue: (TreeNode | null)[] = [root];
   const result: number[][] = [];
@@ -89,7 +88,7 @@ Give an array and return a tree construction.
 
 We go deep inside it's left and it's right, compare both of them. The one has greatest value will be add to one.
 
-```js
+```ts
 function maxDepth(root: TreeNode | null): number {
   if (root === null) return 0;
 
@@ -102,7 +101,7 @@ function maxDepth(root: TreeNode | null): number {
 
 ### Minimum Depth of Binary Tree
 
-```js
+```ts
 function minDepth(root: TreeNode | null): number {
   if (root === null) return 0;
 
@@ -119,7 +118,7 @@ function minDepth(root: TreeNode | null): number {
 
 A balanced binary tree, also referred to as a height-balanced binary tree, is defined as a binary tree in which the height of the left and right subtree of any node differ by not more than 1.
 
-```js
+```ts
 function isBalanced(root: TreeNode | null): boolean {
   let resp = true;
   const Depth = (node: TreeNode | null): number => {
@@ -143,7 +142,7 @@ Given the roots of two binary trees p and q, write a function to check if they a
 
 We can traverse both of them at same time and find if they are equal in the same node.
 
-```js
+```ts
 const isSameNode = (p: TreeNode | null, q: TreeNode | null) => {
   if (p === null && q === null) return true;
   if (p === null || q === null) return false;
@@ -152,4 +151,16 @@ const isSameNode = (p: TreeNode | null, q: TreeNode | null) => {
 
   return isSameNode(p.left, q.left) && isSameNode(p.right, q.right);
 };
+```
+
+## Invert Binary Tree
+
+```ts
+function invertTree(root: TreeNode | null): TreeNode | null {
+  if (root === null) return null;
+  invertTree(root.left);
+  invertTree(root.right);
+  [root.right, root.left] = [root.left, root.right];
+  return root;
+}
 ```
