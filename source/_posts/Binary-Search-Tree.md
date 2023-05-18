@@ -10,7 +10,8 @@ lang: en
 comments: true
 mathjax: false
 date: 2023-05-11 14:33:44
-updated: {{ updated }}
+updated: {{updated}}
+excerpt: 'Simple introduction of binary search tree'
 ---
 
 You can use Search Tree both as a dictionary and as a priority queue.
