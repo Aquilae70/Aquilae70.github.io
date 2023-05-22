@@ -1,7 +1,5 @@
 ---
 title: Methods Collection
-tags:
-  - JavaScript
 categories:
   - Productivity
 lang: en
