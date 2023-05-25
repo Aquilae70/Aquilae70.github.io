@@ -13,7 +13,6 @@ comments: true
 mathjax: false
 date: 2023-05-18 13:22:03
 updated: {{updated}}
-excerpt: Come and Play !
 ---
 
 <!-- markdownlint-disable MD033 -->
@@ -21,36 +20,35 @@ excerpt: Come and Play !
 ## Game Demo
 
 <style>
-#cover {
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  position: absolute;
-  width: 610px;
-  height: 360px;
-  background-color: rgb(10 24 84 / 34%);
-  z-index: 10;
-  padding-left: 150px;
-  padding-top: 100px;
-}
-.kt-keyboard-key {
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  background-color: rgb(10 24 84 / 0%);
-  color: #000000;
-  text-align: center;
-  line-height: 30px;
-  border-radius: 4px;
-  display: inline-block;
-  margin: 0;
-}
-.kt-red-key {
-  background-color: #ffb095;
-}
-.kt-keyboard-container {
-  display: flex;
-}
+  #cover {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    width: 610px;
+    height: 360px;
+    background-color: rgb(10 24 84 / 34%);
+    z-index: 10;
+    padding-left: 150px;
+    padding-top: 100px;
+  }
+  .kt-keyboard-key {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(10 24 84 / 0%);
+    color: #000000;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0;
+  }
+  .kt-red-key {
+    background-color: #ffb095;
+  }
+  .kt-keyboard-container {
+    display: flex;
+  }
 </style>
-
 <div id="cover">
   <div style="color: white">
     Press keyboard
@@ -68,7 +66,6 @@ excerpt: Come and Play !
     </div>
     control direction
   </div>
-
   <div style="color: white; margin-top: 50px">
     Press enter
     <p class="kt-keyboard-key kt-red-key">↩︎</p>
@@ -76,9 +73,9 @@ excerpt: Come and Play !
   </div>
 </div>
 <canvas id="wrap" width="760" height="460" style="background: #202020" style="position: relative"></canvas>
-
 <script type="module" src="/scripts/SnakeGame.js"></script>
 
+<!--more-->
 ## Code Implementation
 
 ### Modal

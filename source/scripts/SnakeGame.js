@@ -103,7 +103,7 @@ const Move = () => {
   Game.Move();
   DrawRect(Game.snake.head.x, Game.snake.head.y, '#f44336');
   if (Game.isFood) Eat();
-  if (Game.Valid()) setTimeout(() => Move(), 50);
+  if (Game.Valid()) setTimeout(() => Move(), 70);
   else document.getElementById('cover').style.display = 'block';
 };
 const Init = () => {
