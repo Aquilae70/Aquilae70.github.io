@@ -71,7 +71,7 @@ updated: {{updated}}
     start game
   </div>
 </div>
-<canvas id="wrap" width="760" height="460" style="background: #202020"></canvas>
+<canvas id="wrap" width="500" height="300" style="background: #202020"></canvas>
 <script type="module" src="/scripts/SnakeGame.js"></script>
 
 <!--more-->
