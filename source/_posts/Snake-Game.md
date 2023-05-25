@@ -17,18 +17,17 @@ updated: {{updated}}
 
 <!-- markdownlint-disable MD033 -->
 
-## Game Demo
-
 <style>
   #cover {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: absolute;
-    width: 610px;
-    height: 360px;
+    width: 450px;
+    height: 250px;
     background-color: rgb(10 24 84 / 34%);
     z-index: 10;
-    padding-left: 150px;
-    padding-top: 100px;
+    padding-left: 50px;
+    padding-top: 50px;
+    margin: 0 auto;
   }
   .kt-keyboard-key {
     width: 30px;
@@ -72,7 +71,7 @@ updated: {{updated}}
     start game
   </div>
 </div>
-<canvas id="wrap" width="760" height="460" style="background: #202020" style="position: relative"></canvas>
+<canvas id="wrap" width="760" height="460" style="background: #202020"></canvas>
 <script type="module" src="/scripts/SnakeGame.js"></script>
 
 <!--more-->
@@ -236,7 +235,7 @@ const DirectMap: {[key: valueof<typeof DirectKey>]: {x: DirectType; y: DirectTyp
 ```ts
 const GridFormat = (x: number, y: number) => `${x}+${y}`;
 const Square = 20;
-const WrapRange = {width: 760, height: 460};
+const WrapRange = {width: 500, height: 300};
 
 const ValidateDirection = (direct: valueof<typeof DirectKey>, curDirect: valueof<typeof DirectKey>) => {
   if (!DirectMap[direct]) return false;

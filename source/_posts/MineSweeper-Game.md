@@ -17,8 +17,6 @@ updated: {{updated}}
 
 <!-- markdownlint-disable MD033 -->
 
-## Game Demo
-
 <style>
   #app {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -92,15 +90,6 @@ updated: {{updated}}
     -webkit-background-clip: text;
     position: relative;
     letter-spacing: 0.4rem;
-  }
-  .kt-content::after {
-    content: attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 64px;
-    color: transparent;
-    -webkit-text-stroke: 12px #000;
-    z-index: -1;
   }
 </style>
 <script type="importmap">
