@@ -22,15 +22,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"kristine7q.me","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="Game Demo   #cover {     font-family: &#39;Gill Sans&#39;, &#39;Gill Sans MT&#39;, Calibri, &#39;Trebuchet MS&#39;, sans-serif;     position: absolute;     width: 610px;     height: 360px;     background-color: rgb(10 24 8">
+    <meta name="description" content="#cover {     font-family: &#39;Gill Sans&#39;, &#39;Gill Sans MT&#39;, Calibri, &#39;Trebuchet MS&#39;, sans-serif;     position: absolute;     width: 450px;     height: 250px;     background-color: rgb(10 24 84 &#x2F; 34%);">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Snake Game">
 <meta property="og:url" content="https://kristine7q.me/2023/05/18/Snake-Game/">
 <meta property="og:site_name" content="Kristine&#39;s Blog">
-<meta property="og:description" content="Game Demo   #cover {     font-family: &#39;Gill Sans&#39;, &#39;Gill Sans MT&#39;, Calibri, &#39;Trebuchet MS&#39;, sans-serif;     position: absolute;     width: 610px;     height: 360px;     background-color: rgb(10 24 8">
+<meta property="og:description" content="#cover {     font-family: &#39;Gill Sans&#39;, &#39;Gill Sans MT&#39;, Calibri, &#39;Trebuchet MS&#39;, sans-serif;     position: absolute;     width: 450px;     height: 250px;     background-color: rgb(10 24 84 &#x2F; 34%);">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-05-18T20:22:03.000Z">
-<meta property="article:modified_time" content="2023-05-25T22:52:14.085Z">
+<meta property="article:modified_time" content="2023-05-25T23:19:43.971Z">
 <meta property="article:author" content="Tianqi(Kristine)">
 <meta property="article:tag" content="Gaming">
 <meta property="article:tag" content="TypeScript">
@@ -123,7 +123,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Game-Demo"><span class="nav-number">1.</span> <span class="nav-text">Game Demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-Implementation"><span class="nav-number">2.</span> <span class="nav-text">Code Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Modal"><span class="nav-number">2.1.</span> <span class="nav-text">Modal</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Snake-class"><span class="nav-number">2.1.1.</span> <span class="nav-text">Snake class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Grid-class"><span class="nav-number">2.1.2.</span> <span class="nav-text">Grid class</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controller"><span class="nav-number">2.2.</span> <span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#View"><span class="nav-number">2.3.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Others"><span class="nav-number">2.4.</span> <span class="nav-text">Others</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Types"><span class="nav-number">2.4.1.</span> <span class="nav-text">Types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-amp-Validation"><span class="nav-number">2.4.2.</span> <span class="nav-text">Definition &amp; Validation</span></a></li></ol></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-Implementation"><span class="nav-number">1.</span> <span class="nav-text">Code Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Modal"><span class="nav-number">1.1.</span> <span class="nav-text">Modal</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Snake-class"><span class="nav-number">1.1.1.</span> <span class="nav-text">Snake class</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Grid-class"><span class="nav-number">1.1.2.</span> <span class="nav-text">Grid class</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controller"><span class="nav-number">1.2.</span> <span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#View"><span class="nav-number">1.3.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Others"><span class="nav-number">1.4.</span> <span class="nav-text">Others</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Types"><span class="nav-number">1.4.1.</span> <span class="nav-text">Types</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Definition-amp-Validation"><span class="nav-number">1.4.2.</span> <span class="nav-text">Definition &amp; Validation</span></a></li></ol></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +223,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
+      <time title="Modified: 25/05/2023 16:19:43" itemprop="dateModified" datetime="2023-05-25T16:19:43-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -261,16 +261,17 @@
     <div class="post-body" itemprop="articleBody">
         <!-- markdownlint-disable MD033 -->
 
-<h2 id="Game-Demo"><a href="#Game-Demo" class="headerlink" title="Game Demo"></a>Game Demo</h2><style>
+<style>
   #cover {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     position: absolute;
-    width: 610px;
-    height: 360px;
+    width: 450px;
+    height: 250px;
     background-color: rgb(10 24 84 / 34%);
     z-index: 10;
-    padding-left: 150px;
-    padding-top: 100px;
+    padding-left: 50px;
+    padding-top: 50px;
+    margin: 0 auto;
   }
   .kt-keyboard-key {
     width: 30px;
@@ -314,7 +315,7 @@
     start game
   </div>
 </div>
-<canvas id="wrap" width="760" height="460" style="background: #202020" style="position: relative"></canvas>
+<canvas id="wrap" width="760" height="460" style="background: #202020"></canvas>
 <script type="module" src="/scripts/SnakeGame.js"></script>
 
 <span id="more"></span>
@@ -449,7 +450,7 @@ window<span class="token punctuation">.</span><span class="token function">addEv
 
 <h4 id="Definition-amp-Validation"><a href="#Definition-amp-Validation" class="headerlink" title="Definition &amp; Validation"></a>Definition &amp; Validation</h4><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">const</span> <span class="token function-variable function">GridFormat</span> <span class="token operator">=</span> <span class="token punctuation">(</span>x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>x<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token string">+</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">$&#123;</span>y<span class="token interpolation-punctuation punctuation">&#125;</span></span><span class="token template-punctuation string">`</span></span><span class="token punctuation">;</span>
 <span class="token keyword">const</span> Square <span class="token operator">=</span> <span class="token number">20</span><span class="token punctuation">;</span>
-<span class="token keyword">const</span> WrapRange <span class="token operator">=</span> <span class="token punctuation">&#123;</span>width<span class="token operator">:</span> <span class="token number">760</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">460</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> WrapRange <span class="token operator">=</span> <span class="token punctuation">&#123;</span>width<span class="token operator">:</span> <span class="token number">500</span><span class="token punctuation">,</span> height<span class="token operator">:</span> <span class="token number">300</span><span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
 
 <span class="token keyword">const</span> <span class="token function-variable function">ValidateDirection</span> <span class="token operator">=</span> <span class="token punctuation">(</span>direct<span class="token operator">:</span> valueof<span class="token operator">&lt;</span><span class="token keyword">typeof</span> DirectKey<span class="token operator">></span><span class="token punctuation">,</span> curDirect<span class="token operator">:</span> valueof<span class="token operator">&lt;</span><span class="token keyword">typeof</span> DirectKey<span class="token operator">></span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
   <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>DirectMap<span class="token punctuation">[</span>direct<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span><span class="token punctuation">;</span>

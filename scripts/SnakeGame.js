@@ -13,11 +13,11 @@ const DirectMap = {
 };
 const GridFormat = (x, y) => `${x}+${y}`;
 const Square = 20;
-const WrapRange = {width: 760, height: 460};
+const WrapRange = {width: 500, height: 300};
 class Snake {
   constructor() {
-    this.head = {x: 340, y: 140, before: null};
-    this.end = {x: 320, y: 140, before: this.head};
+    this.head = {x: 140, y: 140, before: null};
+    this.end = {x: 120, y: 140, before: this.head};
   }
   MoveOn({x, y}) {
     this.head.before = {x: this.head.x + x * Square, y: this.head.y + y * Square, before: null};
@@ -33,7 +33,7 @@ class Grid {
     this.AddBlank = ({x, y}) => this.blanks.add(GridFormat(x, y));
     this.DeleteBlank = ({x, y}) => this.blanks.delete(GridFormat(x, y));
     this.IsBlank = ({x, y}) => this.blanks.has(GridFormat(x, y));
-    this.food = {x: 440, y: 140};
+    this.food = {x: 240, y: 140};
     this.blanks = new Set();
     for (let x = 0; x < WrapRange.width; x += Square)
       for (let y = 0; y < WrapRange.height; y += Square) this.blanks.add(GridFormat(x, y));
@@ -103,7 +103,7 @@ const Move = () => {
   Game.Move();
   DrawRect(Game.snake.head.x, Game.snake.head.y, '#f44336');
   if (Game.isFood) Eat();
-  if (Game.Valid()) setTimeout(() => Move(), 70);
+  if (Game.Valid()) setTimeout(() => Move(), 90);
   else document.getElementById('cover').style.display = 'block';
 };
 const Init = () => {
