@@ -92,7 +92,7 @@
 
 
 <nav class="site-nav">
-  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">31</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">10</span></a></li>
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">33</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">11</span></a></li>
   </ul>
 </nav>
 
@@ -131,7 +131,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">10</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -142,7 +142,7 @@
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">31</span>
+        <span class="site-state-item-count">33</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -170,6 +170,225 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kristine7q.me/2023/05/25/MineSweeper-Game/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/my_logo_400x400.png">
+      <meta itemprop="name" content="Tianqi(Kristine)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kristine's Blog">
+      <meta itemprop="description" content="A Person Who Wants to Bring Something in the World">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Kristine's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/05/25/MineSweeper-Game/" class="post-title-link" itemprop="url">MineSweeper Game</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 25/05/2023 15:01:06 / Modified: 15:52:14" itemprop="dateCreated datePublished" datetime="2023-05-25T15:01:06-07:00">25/05/2023</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Code-Implementation/" itemprop="url" rel="index"><span itemprop="name">Code Implementation</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2023/05/25/MineSweeper-Game/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/05/25/MineSweeper-Game/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <!-- markdownlint-disable MD033 -->
+
+<h2 id="Game-Demo"><a href="#Game-Demo" class="headerlink" title="Game Demo"></a>Game Demo</h2><style>
+  #app {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .kt-row {
+    display: flex;
+    width: 450px;
+  }
+  .kt-item {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px outset #ececec;
+    background: #c0c0c0;
+  }
+  .kt-checked {
+    border: 1px solid #808080;
+    border-width: 1px 0 0 1px;
+  }
+  .kt-sign:before {
+    content: "🚩";
+  }
+  .kt-mine:before {
+    content: "💣";
+  }
+  .kt-get:before {
+    content: "✅";
+  }
+  .kt-bar {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    border: 2px solid #7B7B7B;
+    background-color: #C0C0C0;
+    margin-bottom: 5px;
+    width: 300px;
+    box-sizing: border-box;
+    font-size: 20px;
+    >p {
+      display: inline-block;
+      text-align: center;
+      margin: 2px 5px;
+      >span {
+        margin-right: 10px
+      }
+    }
+    >button {
+      cursor: pointer;
+      border-top: 2px solid #ffffff;
+      border-right: 2px solid #7B7B7B;
+      border-bottom: 2px solid #7B7B7B;
+      border-left: 2px solid #ffffff;
+    }
+    >button:hover {
+      cursor: pointer;
+      background-color: #C0C0C0;
+
+    }
+  }
+  .kt-content {
+    width: 300px;
+    margin: 0;
+    font-family: 'Nosifer', cursive;
+    font-size: 2rem;
+    color: transparent;
+    background: linear-gradient(to right, #ffef09, #ff0c0c, #ff0000);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: relative;
+    letter-spacing: 0.4rem;
+  }
+  .kt-content::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 64px;
+    color: transparent;
+    -webkit-text-stroke: 12px #000;
+    z-index: -1;
+  }
+</style>
+<script type="importmap">
+   {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+<div id="app">
+  <div class="kt-bar">
+    <p>
+      <span v-html="`🚩: ${Sweeper.flag}`"></span>
+      <span v-html="`💣: ${mineCount}`"></span>
+    </p>
+    <button class="kt-again" @click="Again">Again</button>
+  </div>
+  <div v-for="row in Sweeper.grid" class="kt-row">
+    <div v-for="item in row" :key="item.key" @click="()=>clickItem(item)" class="kt-item"
+      :class="{'kt-checked': item.checked, 'kt-get': item.checked&&item.sign&&item.isMine, 'kt-sign': item.sign, 'kt-mine': item.checked&&item.isMine}"
+      @click.right="(e)=>clickRight(e,item)">
+      <span v-html="item.checked && !item.sign && !item.isMine && item.count || ''"></span>
+    </div>
+  </div>
+  <div style="text-align: center;" v-if="win">
+    <p data-text="you win!!" class="kt-content">
+      you win!!
+    </p>
+  </div>
+  <p v-else><svg height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512" width="1em" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(.1 0 0 -.1 0 512)"><path d="m3870 5107c-49-23-88-60-106-100-27-60-28-316-1-365 80-147 273-146 349 3 26 49 36 222 19 306-26 124-159 203-261 156z"/><path d="m2100 4905c-432-61-822-255-1130-565-304-304-485-667-557-1110-16-103-18-181-18-770 0-712 1-735 61-972 155-620 614-1135 1210-1359 233-87 429-122 694-122 318-1 535 45 822 175 216 97 388 217 569 397 300 299 479 646 556 1076 16 90 18 172 18 805 0 634-2 715-18 805-77 430-259 785-553 1079-293 293-654 479-1074 553-123 21-449 26-580 8zm70-1370v-975h-690-690v255c0 275 11 387 54 550 151 564 618 1005 1196 1129 36 8 80 15 98 15l32 1zm1767-1552c-8-234-32-377-92-543-173-483-573-853-1069-989-247-68-552-70-806-6-432 108-815 420-1016 825-116 235-163 450-164 743v157h1577 1576z"/><path d="m4645 4901c-24-11-91-70-166-147-106-109-127-136-137-174-22-90 26-192 107-226 44-18 125-18 165 1 46 22 272 254 291 298 30 73 15 148-44 210-53 57-141 73-216 38z"/><path d="m4688 4131c-121-26-189-156-139-266 21-46 79-101 119-112 15-5 90-8 167-8 154 0 180 8 233 66 86 97 56 244-63 307-34 17-253 27-317 13z"/></g></svg>Right-click to sign flag🚩.</p>
+</div>
+<script type="module">
+  import { createApp } from 'vue';
+  import { MineSweeperComp } from '/scripts/MineSweeper.js';
+  const App = createApp(MineSweeperComp).mount('#app');
+</script>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/05/25/MineSweeper-Game/#more" rel="contents">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -215,7 +434,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
+      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -251,7 +470,63 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          Come and Play !
+          <!-- markdownlint-disable MD033 -->
+
+<h2 id="Game-Demo"><a href="#Game-Demo" class="headerlink" title="Game Demo"></a>Game Demo</h2><style>
+  #cover {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    position: absolute;
+    width: 610px;
+    height: 360px;
+    background-color: rgb(10 24 84 / 34%);
+    z-index: 10;
+    padding-left: 150px;
+    padding-top: 100px;
+  }
+  .kt-keyboard-key {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    background-color: rgb(10 24 84 / 0%);
+    color: #000000;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    display: inline-block;
+    margin: 0;
+  }
+  .kt-red-key {
+    background-color: #ffb095;
+  }
+  .kt-keyboard-container {
+    display: flex;
+  }
+</style>
+<div id="cover">
+  <div style="color: white">
+    Press keyboard
+    <div style="padding: 0 20px; display: inline-block">
+      <div class="kt-keyboard-container">
+        <p class="kt-keyboard-key"></p>
+        <p class="kt-keyboard-key kt-red-key">W</p>
+        <p class="kt-keyboard-key"></p>
+      </div>
+      <div class="kt-keyboard-container">
+        <p class="kt-keyboard-key kt-red-key">A</p>
+        <p class="kt-keyboard-key kt-red-key">S</p>
+        <p class="kt-keyboard-key kt-red-key">D</p>
+      </div>
+    </div>
+    control direction
+  </div>
+  <div style="color: white; margin-top: 50px">
+    Press enter
+    <p class="kt-keyboard-key kt-red-key">↩︎</p>
+    start game
+  </div>
+</div>
+<canvas id="wrap" width="760" height="460" style="background: #202020" style="position: relative"></canvas>
+<script type="module" src="/scripts/SnakeGame.js"></script>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2023/05/18/Snake-Game/#more" rel="contents">
@@ -321,7 +596,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
+      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -427,7 +702,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
+      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -533,7 +808,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
+      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -627,7 +902,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
+      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -733,7 +1008,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
+      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -839,7 +1114,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
+      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -945,7 +1220,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
+      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1051,7 +1326,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
+      <time title="Modified: 25/05/2023 15:52:14" itemprop="dateModified" datetime="2023-05-25T15:52:14-07:00">25/05/2023</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1113,112 +1388,9 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://kristine7q.me/2022/09/13/MacBook%20Setup/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/my_logo_400x400.png">
-      <meta itemprop="name" content="Tianqi(Kristine)">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Kristine's Blog">
-      <meta itemprop="description" content="A Person Who Wants to Bring Something in the World">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Kristine's Blog">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2022/09/13/MacBook%20Setup/" class="post-title-link" itemprop="url">MacBook Setup for Frontend Development</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 13/09/2022 14:47:33" itemprop="dateCreated datePublished" datetime="2022-09-13T14:47:33-07:00">13/09/2022</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 22/05/2023 14:18:08" itemprop="dateModified" datetime="2023-05-22T14:18:08-07:00">22/05/2023</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/Productivity/" itemprop="url" rel="index"><span itemprop="name">Productivity</span></a>
-        </span>
-    </span>
-
-  
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Disqus: </span>
-    
-    <a title="disqus" href="/2022/09/13/MacBook%20Setup/#disqus_thread" itemprop="discussionUrl">
-      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/09/13/MacBook Setup/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          An instruction about how to setup a new MacBook corresponding to my own using habit. It might not correspond to yours
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2022/09/13/MacBook%20Setup/#more" rel="contents">
-                Read more &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" title="Next page" aria-label="Next page" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
 
 </div>
   </main>

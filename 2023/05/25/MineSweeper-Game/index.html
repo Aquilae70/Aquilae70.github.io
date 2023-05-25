@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+<link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/my_logo_400x400.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/my_logo_400x400.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/my_logo_16x16.png">
+  <link rel="mask-icon" href="/images/my_logo_400x400.png" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@300&display=swap/css?family=Roboto:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/themes/orange/pace-theme-minimal.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pace/1.2.4/pace.min.js" integrity="sha256-gqd7YTjg/BtfqWSwsJOvndl0Bxc8gFImLEkXQT8+qj0=" crossorigin="anonymous"></script>
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"kristine7q.me","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.15.1","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"bookmark":{"enable":true,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":true,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":true,"nav":null},"stickytabs":true,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Game Demo   #app {     font-family: &#39;Franklin Gothic Medium&#39;, &#39;Arial Narrow&#39;, Arial, sans-serif;   }   .kt-row {     display: flex;     width: 450px;   }   .kt-item {     width: 30px;     height: 30">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MineSweeper Game">
+<meta property="og:url" content="https://kristine7q.me/2023/05/25/MineSweeper-Game/">
+<meta property="og:site_name" content="Kristine&#39;s Blog">
+<meta property="og:description" content="Game Demo   #app {     font-family: &#39;Franklin Gothic Medium&#39;, &#39;Arial Narrow&#39;, Arial, sans-serif;   }   .kt-row {     display: flex;     width: 450px;   }   .kt-item {     width: 30px;     height: 30">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2023-05-25T22:01:06.000Z">
+<meta property="article:modified_time" content="2023-05-25T22:52:14.085Z">
+<meta property="article:author" content="Tianqi(Kristine)">
+<meta property="article:tag" content="MineSweeper">
+<meta property="article:tag" content="Gaming">
+<meta property="article:tag" content="Vue">
+<meta property="article:tag" content="TypeScript">
+<meta property="article:tag" content="Object-oriented Programming (OOP)">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://kristine7q.me/2023/05/25/MineSweeper-Game/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"https://kristine7q.me/2023/05/25/MineSweeper-Game/","path":"2023/05/25/MineSweeper-Game/","title":"MineSweeper Game"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>MineSweeper Game | Kristine's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-B82VS1621L"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-B82VS1621L","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Kristine's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Study And Reflection</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">33</span></a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">11</span></a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Game-Demo"><span class="nav-number">1.</span> <span class="nav-text">Game Demo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Code-Implementation"><span class="nav-number">2.</span> <span class="nav-text">Code Implementation</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Class"><span class="nav-number">2.1.</span> <span class="nav-text">Class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Controller"><span class="nav-number">2.2.</span> <span class="nav-text">Controller</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#View-Power-by-Vue"><span class="nav-number">2.3.</span> <span class="nav-text">View (Power by Vue)</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Tianqi(Kristine)"
+      src="/images/my_logo_400x400.png">
+  <p class="site-author-name" itemprop="name">Tianqi(Kristine)</p>
+  <div class="site-description" itemprop="description">A Person Who Wants to Bring Something in the World</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">33</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/kristine7q" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;kristine7q" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:kristine.7q@gmail.com" title="E-Mail → mailto:kristine.7q@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+  <div class="cc-license animated" itemprop="license">
+    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" rel="noopener" target="_blank"><img src="https://cdnjs.cloudflare.com/ajax/libs/creativecommons-vocabulary/2020.11.3/assets/license_badges/big/by_nc_sa.svg" alt="Creative Commons"></a>
+  </div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://kristine7q.me/2023/05/25/MineSweeper-Game/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/my_logo_400x400.png">
+      <meta itemprop="name" content="Tianqi(Kristine)">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Kristine's Blog">
+      <meta itemprop="description" content="A Person Who Wants to Bring Something in the World">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="MineSweeper Game | Kristine's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          MineSweeper Game
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 25/05/2023 15:01:06 / Modified: 15:52:14" itemprop="dateCreated datePublished" datetime="2023-05-25T15:01:06-07:00">25/05/2023</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/Code-Implementation/" itemprop="url" rel="index"><span itemprop="name">Code Implementation</span></a>
+        </span>
+    </span>
+
+  
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/2023/05/25/MineSweeper-Game/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/05/25/MineSweeper-Game/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <!-- markdownlint-disable MD033 -->
+
+<h2 id="Game-Demo"><a href="#Game-Demo" class="headerlink" title="Game Demo"></a>Game Demo</h2><style>
+  #app {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  .kt-row {
+    display: flex;
+    width: 450px;
+  }
+  .kt-item {
+    width: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px outset #ececec;
+    background: #c0c0c0;
+  }
+  .kt-checked {
+    border: 1px solid #808080;
+    border-width: 1px 0 0 1px;
+  }
+  .kt-sign:before {
+    content: "🚩";
+  }
+  .kt-mine:before {
+    content: "💣";
+  }
+  .kt-get:before {
+    content: "✅";
+  }
+  .kt-bar {
+    display: flex;
+    display: flex;
+    justify-content: space-between;
+    padding: 2px;
+    border: 2px solid #7B7B7B;
+    background-color: #C0C0C0;
+    margin-bottom: 5px;
+    width: 300px;
+    box-sizing: border-box;
+    font-size: 20px;
+    >p {
+      display: inline-block;
+      text-align: center;
+      margin: 2px 5px;
+      >span {
+        margin-right: 10px
+      }
+    }
+    >button {
+      cursor: pointer;
+      border-top: 2px solid #ffffff;
+      border-right: 2px solid #7B7B7B;
+      border-bottom: 2px solid #7B7B7B;
+      border-left: 2px solid #ffffff;
+    }
+    >button:hover {
+      cursor: pointer;
+      background-color: #C0C0C0;
+
+    }
+  }
+  .kt-content {
+    width: 300px;
+    margin: 0;
+    font-family: 'Nosifer', cursive;
+    font-size: 2rem;
+    color: transparent;
+    background: linear-gradient(to right, #ffef09, #ff0c0c, #ff0000);
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    position: relative;
+    letter-spacing: 0.4rem;
+  }
+  .kt-content::after {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 64px;
+    color: transparent;
+    -webkit-text-stroke: 12px #000;
+    z-index: -1;
+  }
+</style>
+<script type="importmap">
+   {
+    "imports": {
+      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
+    }
+  }
+</script>
+<div id="app">
+  <div class="kt-bar">
+    <p>
+      <span v-html="`🚩: ${Sweeper.flag}`"></span>
+      <span v-html="`💣: ${mineCount}`"></span>
+    </p>
+    <button class="kt-again" @click="Again">Again</button>
+  </div>
+  <div v-for="row in Sweeper.grid" class="kt-row">
+    <div v-for="item in row" :key="item.key" @click="()=>clickItem(item)" class="kt-item"
+      :class="{'kt-checked': item.checked, 'kt-get': item.checked&&item.sign&&item.isMine, 'kt-sign': item.sign, 'kt-mine': item.checked&&item.isMine}"
+      @click.right="(e)=>clickRight(e,item)">
+      <span v-html="item.checked && !item.sign && !item.isMine && item.count || ''"></span>
+    </div>
+  </div>
+  <div style="text-align: center;" v-if="win">
+    <p data-text="you win!!" class="kt-content">
+      you win!!
+    </p>
+  </div>
+  <p v-else><svg height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512" width="1em" xmlns="http://www.w3.org/2000/svg"><g transform="matrix(.1 0 0 -.1 0 512)"><path d="m3870 5107c-49-23-88-60-106-100-27-60-28-316-1-365 80-147 273-146 349 3 26 49 36 222 19 306-26 124-159 203-261 156z"/><path d="m2100 4905c-432-61-822-255-1130-565-304-304-485-667-557-1110-16-103-18-181-18-770 0-712 1-735 61-972 155-620 614-1135 1210-1359 233-87 429-122 694-122 318-1 535 45 822 175 216 97 388 217 569 397 300 299 479 646 556 1076 16 90 18 172 18 805 0 634-2 715-18 805-77 430-259 785-553 1079-293 293-654 479-1074 553-123 21-449 26-580 8zm70-1370v-975h-690-690v255c0 275 11 387 54 550 151 564 618 1005 1196 1129 36 8 80 15 98 15l32 1zm1767-1552c-8-234-32-377-92-543-173-483-573-853-1069-989-247-68-552-70-806-6-432 108-815 420-1016 825-116 235-163 450-164 743v157h1577 1576z"/><path d="m4645 4901c-24-11-91-70-166-147-106-109-127-136-137-174-22-90 26-192 107-226 44-18 125-18 165 1 46 22 272 254 291 298 30 73 15 148-44 210-53 57-141 73-216 38z"/><path d="m4688 4131c-121-26-189-156-139-266 21-46 79-101 119-112 15-5 90-8 167-8 154 0 180 8 233 66 86 97 56 244-63 307-34 17-253 27-317 13z"/></g></svg>Right-click to sign flag🚩.</p>
+</div>
+<script type="module">
+  import { createApp } from 'vue';
+  import { MineSweeperComp } from '/scripts/MineSweeper.js';
+  const App = createApp(MineSweeperComp).mount('#app');
+</script>
+<span id="more"></span>
+
+<h2 id="Code-Implementation"><a href="#Code-Implementation" class="headerlink" title="Code Implementation"></a>Code Implementation</h2><h3 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">class</span> <span class="token class-name">MineSweeper</span> <span class="token punctuation">&#123;</span>
+  grid<span class="token operator">:</span> MineGridType<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+  gridSet<span class="token operator">:</span> Set<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span><span class="token punctuation">;</span>
+  flag<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">;</span>
+  track<span class="token operator">:</span> Set<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span><span class="token punctuation">;</span>
+  <span class="token function">constructor</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>grid <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>gridSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>track <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>grid <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>gridSet <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>flag <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>track <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> Square<span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> y <span class="token operator">&lt;</span> Square<span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> key <span class="token operator">=</span> <span class="token function">KeyFormat</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">||</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">&#123;</span>isMine<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> key<span class="token punctuation">,</span> checked<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> sign<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> count<span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>gridSet<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">InitMine</span><span class="token punctuation">(</span>item<span class="token operator">:</span> MineGridType<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">this</span><span class="token punctuation">.</span>gridSet<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> MineCount<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> random <span class="token operator">=</span> <span class="token builtin">Array</span><span class="token punctuation">.</span><span class="token function">from</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>gridSet<span class="token punctuation">)</span><span class="token punctuation">[</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">random</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">*</span> <span class="token keyword">this</span><span class="token punctuation">.</span>gridSet<span class="token punctuation">.</span>size<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>gridSet<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>random<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token function">KeyDeFormat</span><span class="token punctuation">(</span>random<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">.</span>isMine <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">AddCount</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">Check</span><span class="token punctuation">(</span>item<span class="token operator">:</span> MineGridType<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">const</span> stack <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">KeyDeFormat</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">const</span> check <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Set<span class="token operator">&lt;</span><span class="token builtin">string</span><span class="token operator">></span></span><span class="token punctuation">(</span><span class="token function">KeyDeFormat</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">while</span> <span class="token punctuation">(</span>stack<span class="token punctuation">.</span>length <span class="token operator">></span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token function">RoundIndex</span><span class="token punctuation">(</span>stack<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> stack<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>coordinate<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">const</span> <span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span> <span class="token operator">=</span> coordinate<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">?.</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token operator">!</span>check<span class="token punctuation">.</span><span class="token function">has</span><span class="token punctuation">(</span>coordinate<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">.</span>checked <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token operator">?.</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">.</span>count <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">&amp;&amp;</span> stack<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">[</span>x<span class="token punctuation">,</span> y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+          <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">cutFlag</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">&#125;</span>
+        check<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>coordinate<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      stack<span class="token punctuation">.</span><span class="token function">shift</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">AddCount</span><span class="token punctuation">(</span>x<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> y<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">RoundIndex</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span> y<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">forEach</span><span class="token punctuation">(</span><span class="token punctuation">(</span>coordinate<span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">const</span> <span class="token punctuation">[</span>x1<span class="token punctuation">,</span> y1<span class="token punctuation">]</span> <span class="token operator">=</span> coordinate<span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x1<span class="token punctuation">]</span><span class="token operator">?.</span><span class="token punctuation">[</span>y1<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> <span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x1<span class="token punctuation">]</span><span class="token punctuation">[</span>y1<span class="token punctuation">]</span><span class="token punctuation">.</span>count<span class="token operator">++</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">cutFlag</span><span class="token punctuation">(</span>item<span class="token operator">:</span> MineGridType<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      item<span class="token punctuation">.</span>sign <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>flag<span class="token operator">--</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+  <span class="token function">clearCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> x <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> x <span class="token operator">&lt;</span> Square<span class="token punctuation">;</span> x<span class="token operator">++</span><span class="token punctuation">)</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> y <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> y <span class="token operator">&lt;</span> Square<span class="token punctuation">;</span> y<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">.</span>isMine <span class="token operator">&amp;&amp;</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>grid<span class="token punctuation">[</span>x<span class="token punctuation">]</span><span class="token punctuation">[</span>y<span class="token punctuation">]</span><span class="token punctuation">.</span>checked <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+  <span class="token punctuation">&#125;</span>
+<span class="token punctuation">&#125;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="Controller"><a href="#Controller" class="headerlink" title="Controller"></a>Controller</h3><pre class="line-numbers language-typescript" data-language="typescript"><code class="language-typescript"><span class="token keyword">export</span> <span class="token keyword">const</span> MineSweeperComp <span class="token operator">=</span> <span class="token punctuation">&#123;</span>
+  <span class="token function">data</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+    <span class="token keyword">return</span> <span class="token punctuation">&#123;</span>
+      Sweeper<span class="token operator">:</span> <span class="token keyword">new</span> <span class="token class-name">MineSweeper</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token keyword">get</span> <span class="token function">mineCount</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">return</span> MineCount<span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+      win<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+      init<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">;</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  methods<span class="token operator">:</span> <span class="token punctuation">&#123;</span>
+    <span class="token function">clickItem</span><span class="token punctuation">(</span>item<span class="token operator">:</span> MineGridType<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      item<span class="token punctuation">.</span>checked <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>init<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span><span class="token function">InitMine</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>init <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>count <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span><span class="token function">Check</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>isMine<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span><span class="token function">clearCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span><span class="token function">cutFlag</span><span class="token punctuation">(</span>item<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">CheckWin</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">CheckWin</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">let</span> flat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> items <span class="token keyword">of</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span>grid<span class="token punctuation">)</span> flat <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token operator">...</span>flat<span class="token punctuation">,</span> <span class="token operator">...</span>items<span class="token punctuation">]</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span>flat<span class="token punctuation">.</span><span class="token function">filter</span><span class="token punctuation">(</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span> <span class="token operator">=></span> e<span class="token punctuation">.</span>checked<span class="token punctuation">)</span><span class="token punctuation">.</span>length <span class="token operator">===</span> Square <span class="token operator">*</span> Square <span class="token operator">-</span> MineCount<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>win <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+        <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span><span class="token function">clearCheck</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">clickRight</span><span class="token punctuation">(</span>e<span class="token operator">:</span> PointerEvent<span class="token punctuation">,</span> item<span class="token operator">:</span> MineGridType<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      e<span class="token punctuation">.</span><span class="token function">preventDefault</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>item<span class="token punctuation">.</span>checked<span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>sign<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span>flag<span class="token operator">--</span><span class="token punctuation">;</span>
+        <span class="token keyword">else</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span>flag<span class="token operator">++</span><span class="token punctuation">;</span>
+        item<span class="token punctuation">.</span>sign <span class="token operator">=</span> <span class="token operator">!</span>item<span class="token punctuation">.</span>sign<span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>item<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span> item<span class="token punctuation">.</span>isMine<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span>track<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token operator">!</span>item<span class="token punctuation">.</span>sign <span class="token operator">&amp;&amp;</span> item<span class="token punctuation">.</span>isMine<span class="token punctuation">)</span> <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span>track<span class="token punctuation">.</span><span class="token function">delete</span><span class="token punctuation">(</span>item<span class="token punctuation">.</span>key<span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token punctuation">&#125;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+    <span class="token function">Again</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">&#123;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>Sweeper<span class="token punctuation">.</span><span class="token function">mounted</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>init <span class="token operator">=</span> <span class="token boolean">true</span><span class="token punctuation">;</span>
+      <span class="token keyword">this</span><span class="token punctuation">.</span>win <span class="token operator">=</span> <span class="token boolean">false</span><span class="token punctuation">;</span>
+    <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">&#125;</span><span class="token punctuation">,</span>
+<span class="token punctuation">&#125;</span><span class="token punctuation">;</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<h3 id="View-Power-by-Vue"><a href="#View-Power-by-Vue" class="headerlink" title="View (Power by Vue)"></a>View (Power by Vue)</h3><pre class="line-numbers language-markup" data-language="markup"><code class="language-markup"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kt-bar<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-html</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>`🚩: $&#123;Sweeper.flag&#125;`<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-html</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>`💣: $&#123;mineCount&#125;`<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>button</span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kt-again<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>Again<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>Again<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>button</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>row in Sweeper.grid<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kt-row<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token attr-name">v-for</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item in row<span class="token punctuation">"</span></span> <span class="token attr-name">:key</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item.key<span class="token punctuation">"</span></span> <span class="token attr-name">@click</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>()=>clickItem(item)<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kt-item<span class="token punctuation">"</span></span>
+    <span class="token attr-name">:class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>&#123;'kt-checked': item.checked, 'kt-get': item.checked&amp;&amp;item.sign&amp;&amp;item.isMine, 'kt-sign': item.sign, 'kt-mine': item.checked&amp;&amp;item.isMine&#125;<span class="token punctuation">"</span></span>
+    <span class="token attr-name">@click.right</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>(e)=>clickRight(e,item)<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>span</span> <span class="token attr-name">v-html</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>item.checked &amp;&amp; !item.sign &amp;&amp; !item.isMine &amp;&amp; item.count || ''<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>span</span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>div</span> <span class="token special-attr"><span class="token attr-name">style</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span><span class="token value css language-css"><span class="token property">text-align</span><span class="token punctuation">:</span> center<span class="token punctuation">;</span></span><span class="token punctuation">"</span></span></span> <span class="token attr-name">v-if</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>win<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>p</span> <span class="token attr-name">data-text</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>you win!!<span class="token punctuation">"</span></span> <span class="token attr-name">class</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>kt-content<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>
+    you win!!
+  <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>p</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>div</span><span class="token punctuation">></span></span>
+<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>script</span> <span class="token attr-name">type</span><span class="token attr-value"><span class="token punctuation attr-equals">=</span><span class="token punctuation">"</span>module<span class="token punctuation">"</span></span><span class="token punctuation">></span></span><span class="token script"><span class="token language-javascript">
+  <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> createApp <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'vue'</span><span class="token punctuation">;</span>
+  <span class="token keyword">import</span> <span class="token punctuation">&#123;</span> MineSweeperComp <span class="token punctuation">&#125;</span> <span class="token keyword">from</span> <span class="token string">'/scripts/MineSweeper.js'</span><span class="token punctuation">;</span>
+  <span class="token keyword">const</span> App <span class="token operator">=</span> <span class="token function">createApp</span><span class="token punctuation">(</span>MineSweeperComp<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">mount</span><span class="token punctuation">(</span><span class="token string">'#app'</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>script</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Tianqi(Kristine)
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="https://kristine7q.me/2023/05/25/MineSweeper-Game/" title="MineSweeper Game">https://kristine7q.me/2023/05/25/MineSweeper-Game/</a>
+  </li>
+  <li class="post-copyright-license">
+      <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/MineSweeper/" rel="tag"><i class="fa fa-tag"></i> MineSweeper</a>
+              <a href="/tags/Gaming/" rel="tag"><i class="fa fa-tag"></i> Gaming</a>
+              <a href="/tags/Vue/" rel="tag"><i class="fa fa-tag"></i> Vue</a>
+              <a href="/tags/TypeScript/" rel="tag"><i class="fa fa-tag"></i> TypeScript</a>
+              <a href="/tags/Object-oriented-Programming-OOP/" rel="tag"><i class="fa fa-tag"></i> Object-oriented Programming (OOP)</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/05/18/Snake-Game/" rel="next" title="Snake Game">
+                  Snake Game <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 2022 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Tianqi(Kristine)</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script size="300" alpha="0.6" zIndex="-1" src="https://cdnjs.cloudflare.com/ajax/libs/ribbon.js/1.0.2/ribbon.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.16.0/lozad.min.js" integrity="sha256-mOFREFhqmHeQbXpK2lp4nA3qooVgACfh88fpJftLBbc=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script><script src="/js/bookmark.js"></script>
+
+  
+
+
+
+  <script src="/js/third-party/pace.js"></script>
+
+  
+
+
+
+
+  
+
+  <script class="next-config" data-name="enableMath" type="application/json">false</script><script class="next-config" data-name="mathjax" type="application/json">{"enable":true,"tags":"none","js":{"url":"https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js","integrity":"sha256-MASABpB4tYktI2Oitl4t+78w/lyA+D7b/s9GEP0JOGI="}}</script>
+<script src="/js/third-party/math/mathjax.js"></script>
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"kristine7q","count":true,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
