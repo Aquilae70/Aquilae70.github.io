@@ -13,9 +13,12 @@ comments: true
 mathjax: false
 date: 2023-05-18 13:22:03
 updated: {{updated}}
+excerpt: Come and Play !
 ---
 
 <!-- markdownlint-disable MD033 -->
+
+## play
 
 <style>
   #cover {
@@ -74,7 +77,6 @@ updated: {{updated}}
 <canvas id="wrap" width="500" height="300" style="background: #202020"></canvas>
 <script type="module" src="/scripts/SnakeGame.js"></script>
 
-<!--more-->
 ## Code Implementation
 
 ### Modal
