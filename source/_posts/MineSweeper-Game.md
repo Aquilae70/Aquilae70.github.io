@@ -1,7 +1,6 @@
 ---
-title: MineSweeper Game
+title: Mine Sweeper Game
 tags:
-  - MineSweeper
   - Gaming
   - Vue
   - TypeScript

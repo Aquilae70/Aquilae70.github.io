@@ -1,7 +1,6 @@
 ---
 title: Snake Game
 tags:
-  - Snake Game
   - Gaming
   - HTML5 Canvas
   - TypeScript
