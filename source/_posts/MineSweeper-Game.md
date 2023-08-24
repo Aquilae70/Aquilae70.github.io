@@ -90,6 +90,12 @@ updated: {{updated}}
     position: relative;
     letter-spacing: 0.4rem;
   }
+
+  @media (max-width: 700px) {
+    .kt-row {
+      width: 350px
+    }
+  }
 </style>
 <script type="importmap">
    {

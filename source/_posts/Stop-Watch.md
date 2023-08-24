@@ -83,6 +83,12 @@ updated: {{updated}}
       font-size: 1rem;
     }
   }
+
+  @media (max-width: 600px) {
+    div#container {
+      font-size: 5rem;
+    }
+  }
 </style>
 <div id="container">
   <div id="time">
