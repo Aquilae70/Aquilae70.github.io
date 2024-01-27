@@ -30,7 +30,7 @@
 <meta property="og:description" content="An instruction about how to setup a new MacBook corresponding to my own using habit. It might not correspond to yours">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-09-13T21:47:33.000Z">
-<meta property="article:modified_time" content="2023-08-24T00:10:15.656Z">
+<meta property="article:modified_time" content="2024-01-27T06:20:03.979Z">
 <meta property="article:author" content="Tianqi(Kristine)">
 <meta property="article:tag" content="MacBook setup">
 <meta property="article:tag" content="macOS settings">
@@ -120,7 +120,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-1-OS-Settings"><span class="nav-number">1.</span> <span class="nav-text">STEP 1 OS Settings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-2-Homebrew"><span class="nav-number">2.</span> <span class="nav-text">STEP 2 Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-3-Set-Iterm2-Terminal"><span class="nav-number">3.</span> <span class="nav-text">STEP 3 Set Iterm2 Terminal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-4-Set-VS-Code"><span class="nav-number">4.</span> <span class="nav-text">STEP 4 Set VS Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-5-Set-Github"><span class="nav-number">5.</span> <span class="nav-text">STEP 5 Set Github</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-1-OS-Settings"><span class="nav-number">1.</span> <span class="nav-text">STEP 1 OS Settings</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-2-Homebrew"><span class="nav-number">2.</span> <span class="nav-text">STEP 2 Homebrew</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-3-Set-iTerm2-Terminal"><span class="nav-number">3.</span> <span class="nav-text">STEP 3 Set iTerm2 Terminal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-4-Set-VS-Code"><span class="nav-number">4.</span> <span class="nav-text">STEP 4 Set VS Code</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#STEP-5-Set-Github"><span class="nav-number">5.</span> <span class="nav-text">STEP 5 Set Github</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -220,7 +220,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 23/08/2023 17:10:15" itemprop="dateModified" datetime="2023-08-23T17:10:15-07:00">23/08/2023</time>
+      <time title="Modified: 26/01/2024 22:20:03" itemprop="dateModified" datetime="2024-01-26T22:20:03-08:00">26/01/2024</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -386,8 +386,8 @@ graphicsmagick <span class="token punctuation">\</span>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">npm</span> <span class="token function">install</span> <span class="token parameter variable">-g</span> typescript <span class="token punctuation">\</span>
 ts-node<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
-<h2 id="STEP-3-Set-Iterm2-Terminal"><a href="#STEP-3-Set-Iterm2-Terminal" class="headerlink" title="STEP 3 Set Iterm2 Terminal"></a>STEP 3 Set Iterm2 Terminal</h2><ol>
-<li><p>Make iterm2 Default Term</p>
+<h2 id="STEP-3-Set-iTerm2-Terminal"><a href="#STEP-3-Set-iTerm2-Terminal" class="headerlink" title="STEP 3 Set iTerm2 Terminal"></a>STEP 3 Set iTerm2 Terminal</h2><ol>
+<li><p>Make iTerm2 Default Term</p>
 </li>
 <li><p>Preference</p>
 <ol>
@@ -413,15 +413,24 @@ ts-node<span aria-hidden="true" class="line-numbers-rows"><span></span><span></s
 </li>
 </ol>
 </li>
-<li>Profiles -&gt; window<ol>
+<li>Profiles<ol>
+<li>-&gt; window<ol>
 <li>Transparency: 30</li>
 <li>Blur: 10</li>
 <li>Style: no title bar</li>
 <li>Screen: main screen</li>
 </ol>
 </li>
-<li>Profiles -&gt; Advanced<ol>
+<li>-&gt; Advanced<ol>
 <li>Semantic History -&gt; Open with editor … -&gt; VS Code</li>
+</ol>
+</li>
+<li>-&gt; Text<ol>
+<li>Font -&gt; Monoid Nerd Font</li>
+<li>Use ligatures</li>
+<li>Use Built-in Powerline glyphs</li>
+</ol>
+</li>
 </ol>
 </li>
 <li><a target="_blank" rel="noopener" href="https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory/337386#337386">Open new split pane with current directory</a></li>
@@ -544,7 +553,7 @@ brew <span class="token function">install</span> <span class="token parameter va
 
 <h2 id="STEP-5-Set-Github"><a href="#STEP-5-Set-Github" class="headerlink" title="STEP 5 Set Github"></a>STEP 5 Set Github</h2><p>For terminals, set global name and email</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token function">git</span> config <span class="token parameter variable">--global</span> user.name Kristine
-<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email kristine.7q@gmail.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<span class="token function">git</span> config <span class="token parameter variable">--global</span> user.email kristineliang7@gmail.com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 
 <p>Set SSH Keys for github</p>
 <ol>
@@ -633,7 +642,7 @@ gh auth login<span aria-hidden="true" class="line-numbers-rows"><span></span><sp
 
 <div class="copyright">
   &copy; 2022 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
