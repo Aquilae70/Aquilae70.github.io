@@ -23,7 +23,7 @@ This is a simple guidance about how to build my hexo blog. It's easier to find m
 3. Delete node_nodules `rm -r node_modules` and `npm install`.
 4. Add repo to github origin.
    1. `git init`, `git add .`, `git commit`
-   2. `git remote add origin git@github.com:kristine7q/kristine7q.github.io.git`
+   2. `git remote add origin git@github.com:KristineOvO/KristineOvO.github.io.git`
    3. `git push origin main`
 
 ## Add NexT Theme

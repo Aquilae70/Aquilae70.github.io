@@ -6,14 +6,14 @@
 title: Kristine's Blog
 subtitle: Study And Reflection
 description: A Person Who Wants to Bring Something in the World
-keywords: Kristine7q blog TianqiLiang Tianqi
-author: Tianqi(Kristine)
+keywords: kristineliang Kristineliang KristineLiang blog TianqiLiang Tianqi aquilae70 Aquilae70 kristineliang.dev
+author: Kristine
 language: en
 timezone: 'America/Los_Angeles'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://kristine7q.me
+url: https://kristineliang.dev
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
