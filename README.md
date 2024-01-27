@@ -1,3 +1,3 @@
 # Info
 
-✨This is Kristine's Blog. [kristineliang.dev](https://kristineliang.dev)
+✨This is Kristine's Blog. [blog.kristineliang.dev](https://blog.kristineliang.dev)
