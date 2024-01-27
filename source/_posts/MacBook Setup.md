@@ -126,9 +126,9 @@ npm install -g typescript \
 ts-node
 ```
 
-## STEP 3 Set Iterm2 Terminal
+## STEP 3 Set iTerm2 Terminal
 
-1. Make iterm2 Default Term
+1. Make iTerm2 Default Term
 2. Preference
    1. General ->
       1. Window
@@ -142,15 +142,20 @@ ts-node
          1. unselect "Show tab bar in fullscreen"
          2. Select "flash tab bar when switching tabs in fullscreen"
          3. Dimming: Unselect all dimming
-   3. Profiles -> window
-      1. Transparency: 30
-      2. Blur: 10
-      3. Style: no title bar
-      4. Screen: main screen
-   4. Profiles -> Advanced
-      1. Semantic History -> Open with editor ... -> VS Code
-   5. [Open new split pane with current directory](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory/337386#337386)
-   6. [Natural Text Editing](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory/337386#337386)
+   3. Profiles
+      1. -> window
+         1. Transparency: 30
+         2. Blur: 10
+         3. Style: no title bar
+         4. Screen: main screen
+      2. -> Advanced
+         1. Semantic History -> Open with editor ... -> VS Code
+      3. -> Text
+         1. Font -> Monoid Nerd Font
+         2. Use ligatures
+         3. Use Built-in Powerline glyphs
+   4. [Open new split pane with current directory](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory/337386#337386)
+   5. [Natural Text Editing](https://apple.stackexchange.com/questions/337377/iterm2-split-vertically-with-current-profile-with-same-working-directory/337386#337386)
 3. Install [Oh-my-zsh](https://ohmyz.sh/#install)
 
    1. Homebrew Install [Starship](https://starship.rs/) as new terminal theme.
@@ -279,7 +284,7 @@ For terminals, set global name and email
 
 ```shell
 git config --global user.name Kristine
-git config --global user.email kristine.7q@gmail.com
+git config --global user.email kristineliang7@gmail.com
 ```
 
 Set SSH Keys for github
