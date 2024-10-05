@@ -12,7 +12,7 @@ comments: true
 mathjax: false
 date: 2023-05-18 13:22:03
 updated: {{updated}}
-excerpt: Come and Play !
+excerpt: Click "Read More" and Play !
 ---
 
 <!-- markdownlint-disable MD033 -->
@@ -49,6 +49,20 @@ excerpt: Come and Play !
   .kt-keyboard-container {
     display: flex;
   }
+  #small-width {
+    display: none;
+  }
+  @media (max-width: 500px) {
+    #cover {
+      display: none;
+    }
+    #wrap {
+      display: none;
+    }
+    #small-width {
+      display: block;
+    }
+  }
 </style>
 <div id="cover">
   <div style="color: white">
@@ -72,6 +86,9 @@ excerpt: Come and Play !
     <p class="kt-keyboard-key kt-red-key">↩︎</p>
     start game
   </div>
+</div>
+<div id="small-width">
+Sorry, the game doesn't support small-width screens. :(
 </div>
 <canvas id="wrap" width="500" height="300" style="background: #202020"></canvas>
 <script type="module" src="/scripts/SnakeGame.js"></script>

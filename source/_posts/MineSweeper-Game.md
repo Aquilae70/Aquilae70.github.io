@@ -19,6 +19,8 @@ updated: {{updated}}
 <style>
   #app {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    width: 300px;
+    margin: 0 auto;
   }
   .kt-row {
     display: flex;

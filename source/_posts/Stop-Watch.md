@@ -17,16 +17,18 @@ updated: {{updated}}
   }
 
   #container {
-    width: 4em;
-    margin: 50px auto;
-    font-size: 10rem;
+    width: 100%;
   }
 
   #time {
     display: flex;
+    width: min-content;
+    font-size: 3rem;
+    margin: 50px auto;
   }
 
   #buttons {
+    max-width: 400px;
     display: flex;
     margin: 50px auto;
     justify-content: space-evenly;
@@ -74,7 +76,8 @@ updated: {{updated}}
   }
 
   #records {
-    margin: 0;
+    margin: 0 auto;
+    max-width: 400px;
     >li {
       display: flex;
       margin: 15px;
