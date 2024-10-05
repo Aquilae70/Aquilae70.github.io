@@ -3,10 +3,9 @@ title: Stop Watch
 categories:
   - Code Implementation
 lang: en
-comments: true
+comments: false
 mathjax: false
 date: 2023-08-23 15:01:14
-updated: {{updated}}
 ---
 
 <!-- markdownlint-disable MD033 -->

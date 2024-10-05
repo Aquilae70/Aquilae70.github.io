@@ -7,10 +7,9 @@ tags:
 categories:
   - Study Algorithms
 lang: en
-comments: true
+comments: false
 mathjax: false
 date: 2023-05-11 14:33:44
-updated: {{updated}}
 excerpt: Simple introduction of binary search tree
 ---
 

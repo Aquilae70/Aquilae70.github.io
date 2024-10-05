@@ -8,10 +8,9 @@ tags:
 categories:
   - Code Implementation
 lang: en
-comments: true
+comments: false
 mathjax: false
 date: 2023-05-25 15:01:06
-updated: {{updated}}
 ---
 
 <!-- markdownlint-disable MD033 -->

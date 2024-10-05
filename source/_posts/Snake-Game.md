@@ -8,10 +8,9 @@ tags:
 categories:
   - Code Implementation
 lang: en
-comments: true
+comments: false
 mathjax: false
 date: 2023-05-18 13:22:03
-updated: {{updated}}
 excerpt: Click "Read More" and Play !
 ---
 

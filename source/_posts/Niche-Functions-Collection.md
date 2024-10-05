@@ -1,12 +1,11 @@
 ---
-title: Methods Collection
+title: Niche Functions Collection
 categories:
   - Productivity
 lang: en
 comments: false
 mathjax: false
 date: 2023-05-03 13:54:43
-updated: {{ updated }}
 excerpt: Here is a place for myself to collect some methods in JS or TS etc., which might be ignored or forgotten in daily use.
 ---
 

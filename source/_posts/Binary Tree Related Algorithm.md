@@ -1,13 +1,12 @@
 ---
 title: Binary Tree Related Algorithm
 date: 2023-01-19 15:24:56
-updated: {{updated}}
 tags:
   - Binary Tree
 categories:
   - Study Algorithms
 lang: en
-comments: true
+comments: false
 excerpt: Here are some algorithms about binary tree.
 ---
 

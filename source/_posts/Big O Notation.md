@@ -1,7 +1,6 @@
 ---
 title: Big O Notation
 date: 2022-10-06 16:32:08
-updated: { { updated } }
 tags:
   - Big O notation
   - Time Complexities
@@ -9,7 +8,7 @@ categories:
   - Study Algorithms
 lang: en
 excerpt: Big O notation is used to analyze the efficiency of an algorithm, and characterizes an upper bound on the asymptotic behavior of a function. it says that a function grows no faster than a certain rate, based on the highest-order term.
-comments: true
+comments: false
 mathjax: true
 ---
 

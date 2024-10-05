@@ -8,10 +8,9 @@ tags:
 categories:
   - Guidance
 lang: en
-comments: true
+comments: false
 excerpt: This is a simple guidance about how to build my hexo blog.
 date: 2023-02-07 13:55:48
-updated: {{ updated }}
 ---
 
 This is a simple guidance about how to build my hexo blog. It's easier to find more better tutorial on the website.

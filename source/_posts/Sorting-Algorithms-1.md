@@ -1,7 +1,6 @@
 ---
 title: Sorting Algorithms
 updated:
-  - {{updated}}
 tags:
   - Sorting algorithms
   - Time Complexities
@@ -16,7 +15,7 @@ tags:
 categories:
   - Study Algorithms
 lang: en
-comments: true
+comments: false
 excerpt: >-
   Sorting algorithms are the backbone of computer science and play a critical
   role in organizing data efficiently. In this comprehensive guide, we'll delve

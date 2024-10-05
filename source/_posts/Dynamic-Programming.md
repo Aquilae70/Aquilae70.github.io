@@ -10,10 +10,9 @@ tags:
 categories:
   - Study Algorithms
 lang: en
-comments: true
+comments: false
 mathjax: true
 date: 2023-05-12 18:04:51
-updated: {{updated}}
 excerpt: Dynamic programming is a problem-solving approach that is useful for optimization problems. In these problems, you have to make a series of choices to find the best possible solution. Each choice leads to smaller, similar problems, and these smaller problems tend to repeat. The trick is to remember the solutions to these smaller problems instead of calculating them again and again.
 ---
 
