@@ -5,7 +5,7 @@ tags:
 categories:
   - Interview
 lang: en
-comments: true
+comments: false
 excerpt: I need to find a new FE job in American, so the first thing is to know what kind of skills the company need, and what is my proficient skills.
 permalink: ''
 date: 2023-02-07 16:02:43

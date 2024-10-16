@@ -5,7 +5,7 @@ tags:
 categories:
   - Interview
 lang: en
-comments: true
+comments: false
 excerpt: ''
 permalink: ''
 date: 2023-02-07 16:21:54

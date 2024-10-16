@@ -1,5 +1,5 @@
 ---
-title: Niche Functions Collection
+title: JavaScript Functions Collection
 categories:
   - Productivity
 lang: en
@@ -11,9 +11,10 @@ excerpt: Here is a place for myself to collect some methods in JS or TS etc., wh
 
 ## JavaScript
 
-1. `String.indexOf()`, `Array.indexOf()`: returns the first index at which a given element can be found in the array/string, or -1 if it is not present.
-2. `BigInt()`: represent numeric values which are too large to be represented by the number primitive.
+1. `Array.indexOf()`, `String.indexOf()`: returns the first index at which a given element can be found in the array/string, or -1 if it is not present.
+2. `Array(26).fill(0)`: filled length array
 3. `Array.from(arrayLike, mapFn)`: static method creates a new, shallow-copied Array instance from an iterable or array-like object.
+4. `BigInt()`: represent numeric values which are too large to be represented by the number primitive.
 
 ## TypeScript
 

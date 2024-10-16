@@ -1,13 +1,13 @@
 ---
 title: {{ title }}
 date: {{ date }}
-updated: {{ updated }}
+# updated: {{ updated }}
 tags:
   -
 categories:
   -
 lang: en
-comments: true
 excerpt:
 mathjax: false
+comments: false
 ---
