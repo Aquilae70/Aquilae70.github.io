@@ -2,8 +2,7 @@
 title: Big O Notation
 date: 2022-10-06 16:32:08
 tags:
-  - Big O notation
-  - Time Complexities
+  - Time Complexity
 categories:
   - Study Algorithms
 lang: en

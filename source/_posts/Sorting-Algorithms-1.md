@@ -3,11 +3,6 @@ title: Insertion sort and Merge sort
 updated:
 tags:
   - Sorting algorithms
-  - Time Complexities
-  - Insertion sort
-  - Merge sort
-  - Divide-and-conquer
-  - Recursive
 categories:
   - Study Algorithms
 lang: en

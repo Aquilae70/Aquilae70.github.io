@@ -1,7 +1,7 @@
 ---
 title: JavaScript Functions Collection
 categories:
-  - Productivity
+  - Others
 lang: en
 comments: false
 mathjax: false

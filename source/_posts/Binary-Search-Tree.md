@@ -1,8 +1,7 @@
 ---
 title: Binary Search Tree (BST)
 tags:
-  - Binary Search Tree (BST)
-  - Data Structure
+  - Binary Search Tree
   - Binary Tree
 categories:
   - Study Algorithms

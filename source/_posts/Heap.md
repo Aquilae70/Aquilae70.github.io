@@ -5,7 +5,6 @@ tags:
   - Priority Queue
   - Heap Sort
   - Heap
-  - Data Structures
 categories:
   - Study Algorithms
 lang: en
@@ -101,8 +100,6 @@ A priority queue is an abstract data type that operates similarly to a regular q
 
 - `Insert()`: Enqueue, add an element to the end of the queue.
 - `DeleteMax/Min()`: Dequeue, remove and return the element from the front of the queue.
-
-### Implementation
 
 We can implement Priority Queues simply using an array, but it has efficiency limitation. When both insertions and deletions are frequent, these array/list implementations can lead to inefficiencies.
 

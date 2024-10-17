@@ -1,12 +1,10 @@
 ---
 title: Snake Game
 tags:
-  - Gaming
   - HTML5 Canvas
-  - TypeScript
-  - Object-oriented Programming (OOP)
+  - Coding
 categories:
-  - Code Implementation
+  - Code Demo
 lang: en
 comments: false
 mathjax: false

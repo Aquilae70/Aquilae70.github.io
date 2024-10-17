@@ -1,12 +1,10 @@
 ---
 title: Mine Sweeper Game
 tags:
-  - Gaming
   - Vue
-  - TypeScript
-  - Object-oriented Programming (OOP)
+  - Coding
 categories:
-  - Code Implementation
+  - Code Demo
 lang: en
 comments: false
 mathjax: false
@@ -268,31 +266,34 @@ export const MineSweeperComp = {
 };
 ```
 
-### View (Power by Vue)
+### View (by Vue)
 
 ```html
-  <div class="kt-bar">
-    <p>
-      <span v-html="`🚩: ${Sweeper.flag}`"></span>
-      <span v-html="`💣: ${mineCount}`"></span>
-    </p>
-    <button class="kt-again" @click="Again">Again</button>
+<div class="kt-bar">
+  <p>
+    <span v-html="`🚩: ${Sweeper.flag}`"></span>
+    <span v-html="`💣: ${mineCount}`"></span>
+  </p>
+  <button class="kt-again" @click="Again">Again</button>
+</div>
+<div v-for="row in Sweeper.grid" class="kt-row">
+  <div
+    v-for="item in row"
+    :key="item.key"
+    @click="()=>clickItem(item)"
+    class="kt-item"
+    :class="{'kt-checked': item.checked, 'kt-get': item.checked&&item.sign&&item.isMine, 'kt-sign': item.sign, 'kt-mine': item.checked&&item.isMine}"
+    @click.right="(e)=>clickRight(e,item)"
+  >
+    <span v-html="item.checked && !item.sign && !item.isMine && item.count || ''"></span>
   </div>
-  <div v-for="row in Sweeper.grid" class="kt-row">
-    <div v-for="item in row" :key="item.key" @click="()=>clickItem(item)" class="kt-item"
-      :class="{'kt-checked': item.checked, 'kt-get': item.checked&&item.sign&&item.isMine, 'kt-sign': item.sign, 'kt-mine': item.checked&&item.isMine}"
-      @click.right="(e)=>clickRight(e,item)">
-      <span v-html="item.checked && !item.sign && !item.isMine && item.count || ''"></span>
-    </div>
-  </div>
-  <div style="text-align: center;" v-if="win">
-    <p data-text="you win!!" class="kt-content">
-      you win!!
-    </p>
-  </div>
-  <script type="module">
-    import { createApp } from 'vue';
-    import { MineSweeperComp } from '/scripts/MineSweeper.js';
-    const App = createApp(MineSweeperComp).mount('#app');
-  </script>
+</div>
+<div style="text-align: center;" v-if="win">
+  <p data-text="you win!!" class="kt-content">you win!!</p>
+</div>
+<script type="module">
+  import {createApp} from 'vue';
+  import {MineSweeperComp} from '/scripts/MineSweeper.js';
+  const App = createApp(MineSweeperComp).mount('#app');
+</script>
 ```

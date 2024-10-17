@@ -2,7 +2,7 @@
 title: Depth First Search (DFS) Algorithms
 date: 2022-12-16 14:52:44
 tags:
-  - Depth-First Search(DFS)
+  - Depth-First Search
   - Graph Traversal
   - Backtracking
 categories:

@@ -2,10 +2,9 @@
 title: MacBook Setup for Frontend Development
 date: 2022-09-13 14:47:33
 tags:
-  - MacBook setup
   - macOS settings
 categories:
-  - Productivity
+  - Others
 lang: en
 comments: false
 excerpt: An instruction about how to setup a new MacBook corresponding to my own using habit. It might not correspond to yours

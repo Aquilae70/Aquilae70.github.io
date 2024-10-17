@@ -1,12 +1,9 @@
 ---
 title: How to Build My Hexo Blog
 tags:
-  - Hexo
   - Blog
-  - NexT theme
-  - Github Pages
 categories:
-  - Guidance
+  - Others
 lang: en
 comments: false
 excerpt: This is a simple guidance about how to build my hexo blog.

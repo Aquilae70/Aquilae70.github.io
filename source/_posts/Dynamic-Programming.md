@@ -1,12 +1,8 @@
 ---
 title: Dynamic Programming (DP)
 tags:
-  - Dynamic Programming (DP)
-  - Memoization
-  - Optimization
+  - Dynamic Programming
   - Divide-and-conquer
-  - Rod Cutting Problem
-  - Time Complexities
 categories:
   - Study Algorithms
 lang: en

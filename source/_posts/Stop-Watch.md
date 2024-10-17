@@ -1,7 +1,7 @@
 ---
 title: Stop Watch
 categories:
-  - Code Implementation
+  - Code Demo
 lang: en
 comments: false
 mathjax: false
