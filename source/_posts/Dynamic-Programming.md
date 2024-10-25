@@ -9,81 +9,109 @@ lang: en
 comments: false
 mathjax: true
 date: 2023-05-12 18:04:51
-excerpt: Dynamic programming is a problem-solving approach that is useful for optimization problems. In these problems, you have to make a series of choices to find the best possible solution. Each choice leads to smaller, similar problems, and these smaller problems tend to repeat. The trick is to remember the solutions to these smaller problems instead of calculating them again and again.
 ---
 
-Think of dynamic programming as the clever cousin of the divide-and-conquer method. While both approaches involve breaking problems into smaller parts, dynamic programming takes it a step further by cleverly storing the solutions to each small subproblem. This trick saves time and effort by avoiding repetitive computations of the same subproblems over and over again.
+Dynamic programming is a optimization technique similar to the divide-and-conquer method, where both break problems into smaller parts. However, dynamic programming goes further by storing solutions to sub-problems, saving time and effort by avoiding repeated calculations.
 
-Dynamic programming finds its strength in optimizing problems, aiming to discover the solution with the best (either minimum or maximum) value. This solution is referred to as an "optimal solution" because it achieves the best possible value, but it's important to note that there can be multiple solutions that achieve the same optimal value.
+- Find a solution with the optimal value.
+- Minimization or maximization.
 
-In our first example, we will apply dynamic programming to solve a straightforward problem: determining the best positions to cut steel rods:
+<!--more-->
+
+## Solving Process
+
+### Analyze the question
+
+1. Analyze the problem and find the sub-problems: One function with the same methods but different parameter.
+2. Build a recursive top-down solution
+3. Understand the structure of the recursive tree: Find the repeated computation parameters and store.
+
+### Optimizing methods
+
+1. Characterize the structure of an optimal solution: “Store, don’t recompute” => time-memory trade-off.
+2. Recursively define the value of an optimal solution: Top-down with memoization (**Memoizing** is remembering what has been computed previously)
+3. Compute the value of an optimal solution, typically in a bottom-up fashion.
 
 ## Rod cutting problem
 
-Given a rod of length $n$ and a list of prices for different lengths, determine the maximum revenue that can be obtained by cutting the rod into pieces and selling them according to the given prices. Let's say we have a rod of length 4, here is an example:
+Given a rod of length $n$ and a list of prices for different lengths, determine the maximum revenue that can be obtained by cutting the rod into pieces and selling them according to the given prices.
 
-![Rod cutting problem](/images/[Dynamic-Programming]Rod%20cutting%20problem.png)
+![Rod cutting problem](/images/[Dynamic-Programming]Rod-cutting-problem.jpeg)
 
-### Brute force
-
-As we said the intuition before, dynamic programming using the thought of divide-and-conquer. So at the beginning, we need to solve this problem just by splitting it into sub-problems and deal with each of them recursively. The current revenue is the price $i$ plus the max price $i-1$. By comparing every possible $i$, the max revenue is our goal.
+Original solution
 
 ```ts
-function cutRod(rodLength: number): number {
-  if (rodLength === 0) return 0;
-  let maxRevenue = -1;
-
-  for (let i = 1; i <= rodLength; i++) {
-    const revenue = prices[i] + cutRod(rodLength - i);
-    maxRevenue = Math.max(maxRevenue, revenue);
+function MaxP(len: number): number {
+  if (len === 0) return 0;
+  let max = -1;
+  for (let i = 1; i <= len; i++) {
+    max = Math.max(P[i] + MaxP(len - i), max);
   }
-  return maxRevenue;
+  return max;
 }
 ```
 
-However, the brute force approach has an exponential time complexity $O(2^n)$, because it considers all possible cut combinations.
-
-### Memorize the result
-
-We can optimize this approach using memoization, store and reuse the result for saving the expensive function calls. Before making any recursive calls, check if the maximum revenue for the current rod length is already stored in the memoization table. If it is, return the stored value instead of perform the recursive computation.
+Time Complexity: $O(2^n)$ -> $O(n^2)$. Optimization. Also can be changed to a loop expression.
 
 ```ts
-const Memo = [0];
-function cutRod(rodLength: number): number {
-  if (Memo[rodLength] === undefined) {
-    for (let i = 1; i <= rodLength; i++) {
-      const revenue = prices[i] + cutRod(rodLength - i);
-      Memo[rodLength] = Math.max(Memo[rodLength] || -1, revenue);
+const maxP = [0];
+function MaxP(len: number): number {
+  if (maxP[len] === undefined) {
+    for (let i = 1; i <= len; i++) {
+      maxP[len] = Math.max(P[i] + MaxP(len - i), maxP[len] || -1);
     }
   }
-  return Memo[rodLength];
+  return maxP[len];
 }
 ```
 
-Or we can change it to loop expression
+## Matrix-chain multiplication
+
+Given a sequence of matrices $A_1, A_2, \dots, A_n$, the matrix-chain multiplication problem is to determine the most efficient way to fully parenthesize the product $A_1 \times A_2 \times \dots \times A_n$, such that the total number of scalar multiplications is minimized.
+
+![Matrix-chain multiplication](/images/[Dynamic-Programming]Matrix-chain-multiplication.png)
+
+Based on this thinking process, we can successfully build an memoization solution.
 
 ```ts
-function cutRod(rodLength: number): number {
-  if (Memo[rodLength] === undefined) {
-    for (let i = 1; i <= rodLength; i++) {
-      for (let j = 1; j <= i; j++) {
-        const revenue = prices[j] + Memo[i - j];
-        Memo[i] = Math.max(Memo[i] || -1, revenue);
-      }
-    }
-  }
+const Memo = Array.from({length: arr.length}, () => new Array(arr.length).fill(Infinity));
+Memo.forEach((e, i) => (e[i] = 0));
 
-  return Memo[rodLength];
-}
+const memoCost = (i: number, j: number) => {
+  for (let k = i; k < j; k++) {
+    Memo[i][j] = Math.min(Memo[i][j], minCost(i, k) + minCost(k + 1, j) + arr[i - 1] * arr[k] * arr[j]);
+  }
+  return Memo[i][j];
+};
 ```
 
-## Conclusion Strategy
+## Longest common subsequence
 
-To create a dynamic programming algorithm, you can follow a sequence of four steps:
+Given two sequences: $A = [a_1, a_2, \dots, a_m]$, $B = [b_1, b_2, \dots, b_n]$. The Longest Common Subsequence is the longest sequence $S = [s_1, s_2, \dots, s_k]$ such that $S$ is a subsequence of both $A$ and $B$. Here, $k$ is the maximum possible length for such a subsequence. A subsequence doesn't have to be consecutive, but it has to be in order.
 
-1. **Understand the structure of an optimal solution** Analyze the problem to identify the key components and subproblems that contribute to achieving the best value or outcome.
-2. **Recursively define the value of an optimal solution** Break down the problem into smaller subproblems and define the value of the optimal solution in terms of the values of these subproblems. Use recursion to solve these subproblems.
-3. **Compute the value of an optimal solution, typically in a bottom-up fashion** Start solving the subproblems from the simplest ones and gradually build up to the larger problem. Store the results of solved subproblems in a table or array to avoid redundant calculations.
-4. **Construct an optimal solution from computed information** If you need the actual solution (not just its value), use the information stored during step 3 to construct the optimal solution. This step allows you to determine the specific elements or choices that lead to the optimal solution.
+![Longest common subsequence](/images/[Dynamic-Programming]Longest-common-subsequence.png)
 
-Note that if you only require the value of the optimal solution and not the solution itself, you can skip step 4 However, if you do perform step 4, it is often beneficial to maintain additional information during step 3, as it simplifies the process of constructing the optimal solution.
+A simple recursive solution
+
+```ts
+const LCS = (i: number, j: number) => {
+  if (i < 0 || j < 0) return 0;
+  if (A[i] == B[j]) return LCS(i - 1, j - 1) + 1;
+  else return Math.max(LCS(i, j - 1), LCS(i - 1, j));
+};
+```
+
+Memoization
+
+```js
+const Memo = Array.from({length: A.length}, () => new Array(B.length).fill(-1));
+const LCS = (i: number, j: number) => {
+  if (i < 0 || j < 0) return 0;
+  if (Memo[i][j] != -1) return Memo[i][j];
+
+  if (A[i] == B[j]) Memo[i][j] = LCS(i - 1, j - 1) + 1;
+  else Memo[i][j] = Math.max(LCS(i - 1, j), LCS(i, j - 1));
+
+  return Memo[i][j];
+};
+```
